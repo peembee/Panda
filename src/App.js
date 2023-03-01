@@ -1,13 +1,14 @@
-import logo from './logo.svg';
-import './App.css';
 import "bootstrap/dist/css/bootstrap.css"
 
 function App() {
-  return (
-    <div>
-      <p>Team Panda</p>
-    </div>
-  );
+return(
+  <div className="container"  >
+    <p>Hello panda</p>
+  </div>
+)
+
+ 
+
 }
 
 export default App;
