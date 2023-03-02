@@ -14,8 +14,7 @@ export const NavbarComponent = (props) => {
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="ms-auto">
               <Nav.Link as={NavLink} to="/">Hem</Nav.Link>
-              <Nav.Link as={NavLink} to="/logga-in">Sign in</Nav.Link>
-              <SignInCompoment/>
+              <Nav.Link as={NavLink} to="/logga-in">Sign in</Nav.Link>              
             </Nav>
           </Navbar.Collapse>
         </Container>

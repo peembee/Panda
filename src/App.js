@@ -8,14 +8,15 @@ import { BrowserRouter as Router, Route, Routes } from  "react-router-dom";
 function App() {
   return (
     <div>
-    <Router>
-    <NavbarComponent/>
-      <Routes>
-        <Route path="/" element={<HomeComponent/>} />
-      </Routes>
-      
-    </Router>
-    
+      <div>
+      <Router>
+      <NavbarComponent/>
+        <Routes>
+          <Route path="/" element={<HomeComponent/>} />
+        </Routes>      
+      </Router>    
+      </div>
+      <SignInCompoment/>
     </div>
   );
 
