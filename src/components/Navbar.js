@@ -2,6 +2,7 @@ import React from "react";
 import { NavLink } from 'react-router-dom';
 import { Container } from "react-bootstrap";
 import { Navbar, Nav} from "react-bootstrap";
+import { SignInCompoment } from "./SignIn.js"
 
 export const NavbarComponent = (props) => {
 
@@ -14,6 +15,7 @@ export const NavbarComponent = (props) => {
             <Nav className="ms-auto">
               <Nav.Link as={NavLink} to="/">Hem</Nav.Link>
               <Nav.Link as={NavLink} to="/logga-in">Sign in</Nav.Link>
+              <SignInCompoment/>
             </Nav>
           </Navbar.Collapse>
         </Container>

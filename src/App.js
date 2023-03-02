@@ -12,8 +12,8 @@ function App() {
     <NavbarComponent/>
       <Routes>
         <Route path="/" element={<HomeComponent/>} />
-        <Route path="/logga-in" element={<SignInCompoment/>} />
       </Routes>
+      
     </Router>
     
     </div>
