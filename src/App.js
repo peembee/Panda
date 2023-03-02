@@ -1,5 +1,3 @@
-import logo from './logo.svg';
-import './App.css';
 import "bootstrap/dist/css/bootstrap.css"
 import { NavbarComponent } from './components/Navbar';
 import { HomeComponent } from './components/Home';
@@ -20,6 +18,7 @@ function App() {
     
     </div>
   );
+
 }
 
 export default App;
