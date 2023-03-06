@@ -13,7 +13,7 @@ export const NavbarComponent = (props) => {
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="ms-auto">
-              <Nav.Link as={NavLink} to="/">Hem</Nav.Link>
+              <Nav.Link as={NavLink} to="/">Home</Nav.Link>
               <Nav.Link as={NavLink} to="/logga-in">Sign in</Nav.Link>              
             </Nav>
           </Navbar.Collapse>
