@@ -4,8 +4,11 @@ import { HomeComponent } from './components/Home';
 import { SignInCompoment } from './components/SignIn';
 import { BrowserRouter as Router, Route, Routes } from  "react-router-dom";
 import "./Css/style.css";
+import { NewProject } from './components/NewProject';
 
-let signedIn = false;
+
+
+let signedIn = true;
 
 function App() {
   if(signedIn === true){
@@ -16,10 +19,11 @@ function App() {
         <Router>
         <NavbarComponent/>
           <Routes>
-          <Route path="./Home" element={<HomeComponent/>} />
+          <Route path="/components./Home" element={<HomeComponent/>} />
           </Routes>      
         </Router>   
         <HomeComponent/> 
+
         </div>
       </div>
     );
@@ -28,11 +32,9 @@ function App() {
     return (
       <div>
       <Router>
-      <NavbarComponent/>         
-      </Router> 
-      <SignInCompoment/>   
-      </div>
-    
+      <SignInCompoment/>         
+      </Router>         
+      </div>    
     );
   }
 

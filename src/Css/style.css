@@ -1,4 +1,10 @@
-.background{
-    background-color: linear-gradient(#e66465, #9198e5);
-    
+
+
+.signInBackground{
+    background: linear-gradient(#e66465, #9198e5);
+
+    height: 100vh;
+}
+.signInNavbar{
+    box-shadow: 5px 50px 100px rgba(66, 3, 36, 0.653);
 }
