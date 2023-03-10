@@ -8,3 +8,8 @@
 .signInNavbar{
     box-shadow: 5px 50px 100px rgba(66, 3, 36, 0.653);
 }
+
+body{
+    margin-top: 5%;
+    background: linear-gradient(to right, rgb(80,80,80) 0%, rgb(211,211,211)100%);
+}

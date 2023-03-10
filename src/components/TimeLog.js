@@ -19,10 +19,16 @@ export function TimeLog(){
     }
     
 
-    
+    const boxStyle = {
+        padding: '10px',
+        marginBottom: '20px',
+        marginTop: '20px',
+        marginLeft: '20px',
+    };
+
 
     return (
-        <div>
+        <div style={boxStyle}>
         <h1>{time}</h1>
         <Button onClick={() => timeInterval()}>start WOrk</Button>
         <Button onClick={() => clearInterval(id.current)}>Lunch Break</Button>

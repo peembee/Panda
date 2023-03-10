@@ -1,0 +1,29 @@
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: linear-gradient(to bottom, rgb(80,80,80) 0%, rgb(211,211,211)100%);
+    color: #fff;
+  }
+  
+  .navbar ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+  }
+  
+  .navbar li {
+    margin: 0 10px;
+  }
+  
+  .content {
+    margin-top: 50px; /* lägg till en margin-top för att undvika att innehållet döljs av navbaren */
+  }
+  
+.fixed-top {
+    position: fixed;
+    top: 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* lägg till en skugga för att skilja navbaren från innehållet */
+  }
+  
