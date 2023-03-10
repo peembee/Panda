@@ -1,13 +1,13 @@
 import React from "react";
 import Button from 'react-bootstrap/Button';
 import { BrowserRouter as Router, Route, Routes } from  "react-router-dom";
-
+import { TimeLog } from "./TimeLog";
 
 export const HomeComponent = () => {
     return(
         <div>           
             <h1>Homepage, information om vad en användare kan göra? såsom </h1>
-           
+            <div><TimeLog/></div>
             <div>    
                 <h3>box - skapa ett nytt projekt</h3>
                 <div>
