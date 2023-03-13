@@ -57,6 +57,14 @@ export const HomeComponent = () => {
                     </Link>
                 </div>
             </div>
+            <div style={boxStyle}>
+                <h3>Lägg till medarbetare</h3>
+                <div>
+                    <Link to="/addEmployee">
+                        <Button>Go to page</Button>
+                    </Link>
+                </div>
+            </div>
         </div>        
     )
 }

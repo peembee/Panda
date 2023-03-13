@@ -11,7 +11,9 @@ import { InactiveProjects } from './components/InactiveProjects';
 import { ProjectsList } from './components/ProjectsList';
 import { ReportTime } from './components/ReportTime';
 import { AddComment } from "./components/AddComment";
-import { TimeLog } from "./components/TimeLog"
+import { TimeLog } from "./components/TimeLog";
+import { AddEmployee } from "./components/AddEmployee"
+
 
 
 let signedIn = true;
@@ -31,6 +33,7 @@ function App() {
           <Route path="/addComment" element={<AddComment />} />
           <Route path="/timeLog" element={<TimeLog />} />
           <Route path="/reportTime" element={<ReportTime />} />
+          <Route path="/addEmployee" element={<AddEmployee />} />
           </Routes>    
         </div>     
     );
