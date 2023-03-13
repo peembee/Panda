@@ -1,29 +1,37 @@
 import "bootstrap/dist/css/bootstrap.css"
+
+import { Route, Routes } from "react-router-dom"
+import "./Css/style.css";
 import { NavbarComponent } from './components/Navbar';
 import { HomeComponent } from './components/Home';
 import { SignInCompoment } from './components/SignIn';
-import { BrowserRouter as Router, Route, Routes } from  "react-router-dom";
-import "./Css/style.css";
 import { NewProject } from './components/NewProject';
-
+import { ActiveProjects } from './components/ActiveProjects';
+import { InactiveProjects } from './components/InactiveProjects';
+import { ProjectsList } from './components/ProjectsList';
+import { ReportTime } from './components/ReportTime';
+import { AddComment } from "./components/AddComment";
+import { TimeLog } from "./components/TimeLog"
 
 
 let signedIn = true;
 
 function App() {
-  if(signedIn === true){
-      
+  if(signedIn === true){      
     return (
       <div>
         <div>
-        <Router>
-        <NavbarComponent/>
+        <NavbarComponent/> 
           <Routes>
-          <Route path="/components./Home" element={<HomeComponent/>} />
-          </Routes>      
-        </Router>   
-        <HomeComponent/> 
-
+          <Route path="/" element={<HomeComponent />} />
+          <Route path="/newProject" element={<NewProject />} />
+          <Route path="/activeProjects" element={<ActiveProjects />} />
+          <Route path="/inactiveProjects" element={<InactiveProjects />} />
+          <Route path="/projectsList" element={<ProjectsList />} />
+          <Route path="/addComment" element={<AddComment />} />
+          <Route path="/timeLog" element={<TimeLog />} />
+          <Route path="/reportTime" element={<ReportTime />} />
+          </Routes>    
         </div>
       </div>
     );
@@ -31,9 +39,9 @@ function App() {
   else{
     return (
       <div>
-      <Router>
+      
       <SignInCompoment/>         
-      </Router>         
+             
       </div>    
     );
   }

@@ -33,12 +33,13 @@ export const NavbarComponent = (props) => {
   return (
     <Navbar>
       <Container>
-        <Navbar.Brand href="/Home">Panda</Navbar.Brand>
+        <Navbar.Brand>Panda</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="ms-auto">
             <Nav.Link as={NavLink} to="/">Home</Nav.Link>
             <Nav.Link as={NavLink} to="/Information">Information</Nav.Link>
+            <Nav.Link as={NavLink} to="/signOut">Sign Out</Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>
