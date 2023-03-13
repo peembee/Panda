@@ -32,7 +32,7 @@ export const NavbarComponent = (props) => {
   }, []);
 
   return (
-    <Navbar>
+    <Navbar display="flex" expand="sm">
       <Container>
         <Navbar.Brand>
         <Nav.Link as={NavLink} to="/">Panda</Nav.Link> 
