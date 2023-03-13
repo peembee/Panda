@@ -31,11 +31,16 @@
   background-color: rgba(0, 0, 0, 0);
   border: 0px;
 }
+.navBartextContent{
+  transition: 0.5s;
+ } 
 .navBartextContent:hover{
   text-decoration: underline;  
  } 
 .navBartextContent.active{ 
   font-family: bold;
   text-decoration: none;
+  padding-left: 10px;
+  transition: 0.5s;
 }
 
