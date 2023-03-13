@@ -10,6 +10,7 @@
 }
 
 body{
-    margin-top: 5%;
+    padding-top: 50px;
     background: linear-gradient(to right, rgb(80,80,80) 0%, rgb(211,211,211)100%);
 }
+
