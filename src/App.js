@@ -18,12 +18,12 @@ let signedIn = true;
 
 function App() {
   if(signedIn === true){      
-    return (
-      <div>
+    return (     
         <div>
         <NavbarComponent/> 
           <Routes>
           <Route path="/" element={<HomeComponent />} />
+          <Route path="/panda" element={<HomeComponent />} />
           <Route path="/newProject" element={<NewProject />} />
           <Route path="/activeProjects" element={<ActiveProjects />} />
           <Route path="/inactiveProjects" element={<InactiveProjects />} />
@@ -32,16 +32,13 @@ function App() {
           <Route path="/timeLog" element={<TimeLog />} />
           <Route path="/reportTime" element={<ReportTime />} />
           </Routes>    
-        </div>
-      </div>
+        </div>     
     );
   }
   else{
     return (
-      <div>
-      
-      <SignInCompoment/>         
-             
+      <div> 
+         <SignInCompoment/>   
       </div>    
     );
   }

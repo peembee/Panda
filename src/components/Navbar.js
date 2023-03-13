@@ -4,6 +4,7 @@ import { useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
 import { Container } from "react-bootstrap";
 import { Navbar, Nav} from "react-bootstrap";
+import "bootstrap/dist/css/bootstrap.css"
 
 export const NavbarComponent = (props) => {
 
@@ -33,7 +34,9 @@ export const NavbarComponent = (props) => {
   return (
     <Navbar>
       <Container>
-        <Navbar.Brand>Panda</Navbar.Brand>
+        <Navbar.Brand>
+        <Nav.Link as={NavLink} to="/">Panda</Nav.Link> 
+        </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="ms-auto">
