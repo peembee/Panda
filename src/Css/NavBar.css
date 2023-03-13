@@ -26,4 +26,12 @@
     top: 0;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* lägg till en skugga för att skilja navbaren från innehållet */
   }
+
+.dropdownIconBox{
+  background-color: rgba(0, 0, 0, 0);
+  border: 0px;
+}
+.navBartextContent:hover{
+  text-decoration: underline;
   
+ } 
