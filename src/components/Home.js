@@ -12,7 +12,10 @@ export const HomeComponent = () => {
           <h3>En sida som räknar och håller koll på dina tider.</h3>
           <h1>- Så att du slipper.</h1>
         </div>
+
         <div className="section">
+
+        {/* Card 1 */}
           <div className="card mb-3" style={{ maxWidth: "450px" }}>
             <div className="row g-0">
               <div className="col-md-4">
@@ -37,6 +40,7 @@ export const HomeComponent = () => {
             </div>
           </div>
 
+        {/* Card 2 */}
           <div className="card mb-3" style={{ maxWidth: "450px" }}>
             <div className="row g-0">
               <div className="col-md-4">
@@ -61,6 +65,7 @@ export const HomeComponent = () => {
             </div>
           </div>
 
+        {/* Card 3 */}
           <div className="card mb-3" style={{ maxWidth: "450px" }}>
             <div className="row g-0">
               <div className="col-md-4">
@@ -85,6 +90,7 @@ export const HomeComponent = () => {
             </div>
           </div>
 
+        {/* Card 4 */}
           <div className="card mb-3" style={{ maxWidth: "450px" }}>
             <div className="row g-0">
               <div className="col-md-4">
@@ -109,6 +115,7 @@ export const HomeComponent = () => {
             </div>
           </div>
 
+        {/* Card 5 */}
           <div className="card mb-3" style={{ maxWidth: "450px" }}>
             <div className="row g-0">
               <div className="col-md-4">
@@ -133,6 +140,7 @@ export const HomeComponent = () => {
             </div>
           </div>
 
+        {/* Card 6 */}
           <div className="card mb-3" style={{ maxWidth: "450px" }}>
             <div className="row g-0">
               <div className="col-md-4">
@@ -157,6 +165,7 @@ export const HomeComponent = () => {
             </div>
           </div>
 
+        {/* Card 7 */}
           <div className="card mb-3" style={{ maxWidth: "450px" }}>
             <div className="row g-0">
               <div className="col-md-4">
@@ -180,7 +189,8 @@ export const HomeComponent = () => {
               </div>
             </div>
           </div>
-
+          
+        {/* Card 8 */}
           <div className="card mb-3" style={{ maxWidth: "450px" }}>
             <div className="row g-0">
               <div className="col-md-4">
