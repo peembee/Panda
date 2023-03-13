@@ -32,6 +32,9 @@
   border: 0px;
 }
 .navBartextContent:hover{
-  text-decoration: underline;
-  
+  text-decoration: underline;  
  } 
+.navBartextContent.active{ 
+  font-family: bold;
+  text-decoration: none;
+}
