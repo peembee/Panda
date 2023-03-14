@@ -41,13 +41,13 @@ body {
   }
 }
 
+.card{
+  transition: transform 0.3s ease-in-out;
+}
 .card:hover {
   transform: scale(
     1.1
   ); /* förstorar kortet till 110% av sin ursprungliga storlek */
   transition: transform 0.3s ease-in-out; /* skapar en mjuk övergång till förstoringsanimationen */
-}
-
-.card:hover {
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.4);
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.4);
 }
