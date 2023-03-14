@@ -2,7 +2,7 @@ import React from "react";
 import Button from "react-bootstrap/Button";
 import { Link } from "react-router-dom";
 import hus from "../images/hus.png";
-
+import "../Css/home.css";
 export const HomeComponent = () => {
 
   return (
@@ -16,7 +16,7 @@ export const HomeComponent = () => {
         <div className="section">
 
         {/* Card 1 */}
-          <div className="card mb-3" style={{ maxWidth: "450px" }}>
+          <div className="card mb-3 card" style={{ maxWidth: "450px" }}>
             <div className="row g-0">
               <div className="col-md-4">
                 <img src={hus} className="img-fluid rounded-start" alt="..." />
