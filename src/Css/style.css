@@ -25,6 +25,10 @@ body {
   flex-wrap: wrap;
 }
 
+.homePageCardColor{
+  background-color: rgb(253, 5, 5);
+}
+
 .section {
   display: grid;
   grid-template-columns: repeat(2, 1fr);

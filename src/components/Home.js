@@ -1,4 +1,6 @@
 import React from "react";
+import "../Css/newProject.css"
+import "../Css/style.css"
 import Button from "react-bootstrap/Button";
 import { Link } from "react-router-dom";
 import timer from "../images/timer.png";
@@ -8,6 +10,7 @@ import documents from "../images/documents.png";
 import addUser from "../images/addUser.png";
 import checklist from "../images/checklist.png";
 import todo from "../images/help.png";
+
 
 export const HomeComponent = () => {
   return (
@@ -21,7 +24,7 @@ export const HomeComponent = () => {
         <div className="section">
           {/* Card 1 */}
           <div className="card mb-3" style={{ maxWidth: "450px" }}>
-            <div className="row g-0">
+            <div className="row g-0 homePageCardColor">
               <div className="col-md-4">
                 <img
                   src={createproj}
