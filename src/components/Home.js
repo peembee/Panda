@@ -2,7 +2,6 @@ import React from "react";
 import Button from "react-bootstrap/Button";
 import { Link } from "react-router-dom";
 import hus from "../images/hus.png";
-
 export const HomeComponent = () => {
   return (
     <div>
@@ -132,7 +131,7 @@ export const HomeComponent = () => {
                   </p>
                 </div>
                 <div>
-                  <Link to="/timeLog">
+                  <Link to="/reportTime">
                     <Button>Tidsrapportering</Button>
                   </Link>
                 </div>
