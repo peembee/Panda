@@ -12,7 +12,7 @@ import { ReportTime } from './components/ReportTime';
 import { AddComment } from "./components/AddComment";
 import { TimeLog } from "./components/TimeLog";
 import { AddEmployee } from "./components/AddEmployee"
-
+import { DisplayEmployees } from "./components/DisplayEmployees";
 
 
 let signedIn = true;
@@ -33,6 +33,7 @@ function App() {
           <Route path="/timeLog" element={<TimeLog />} />
           <Route path="/reportTime" element={<ReportTime />} />
           <Route path="/addEmployee" element={<AddEmployee />} />
+          <Route path="/displayEmployees" element={<DisplayEmployees />} />
           </Routes>    
         </div>     
     );

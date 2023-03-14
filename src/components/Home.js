@@ -199,8 +199,8 @@ export const HomeComponent = () => {
               </div>
               <div className="col-md-8">
                 <div className="card-body">
-                  <h5 className="card-title"></h5>
-                  <p className="card-text">Här skapar man ett nytt projekt.</p>
+                  <h5 className="card-title">Översikt - Personal</h5>
+                  <p className="card-text">Samtlig information över Personal</p>
                   <p className="card-text">
                     <small className="text-muted">
                       Last updated 3 mins ago
@@ -208,8 +208,8 @@ export const HomeComponent = () => {
                   </p>
                 </div>
                 <div>
-                  <Link to="/newProject">
-                    <Button>Skapa nytt projekt</Button>
+                  <Link to="/displayEmployees">
+                    <Button>Översikt</Button>
                   </Link>
                 </div>
               </div>
