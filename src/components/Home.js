@@ -1,7 +1,13 @@
 import React from "react";
 import Button from "react-bootstrap/Button";
 import { Link } from "react-router-dom";
-import hus from "../images/hus.png";
+import timer from "../images/timer.png";
+import createproj from "../images/createproj.png";
+import file from "../images/file.png";
+import documents from "../images/documents.png";
+import addUser from "../images/addUser.png";
+import checklist from "../images/checklist.png";
+import todo from "../images/help.png";
 
 export const HomeComponent = () => {
   return (
@@ -17,7 +23,11 @@ export const HomeComponent = () => {
           <div className="card mb-3" style={{ maxWidth: "450px" }}>
             <div className="row g-0">
               <div className="col-md-4">
-                <img src={hus} className="img-fluid rounded-start" alt="..." />
+                <img
+                  src={createproj}
+                  className="img-fluid rounded-start"
+                  alt="..."
+                />
               </div>
               <div className="col-md-8">
                 <div className="card-body">
@@ -42,7 +52,11 @@ export const HomeComponent = () => {
           <div className="card mb-3" style={{ maxWidth: "450px" }}>
             <div className="row g-0">
               <div className="col-md-4">
-                <img src={hus} className="img-fluid rounded-start" alt="..." />
+                <img
+                  src={documents}
+                  className="img-fluid rounded-start"
+                  alt="..."
+                />
               </div>
               <div className="col-md-8">
                 <div className="card-body">
@@ -67,7 +81,7 @@ export const HomeComponent = () => {
           <div className="card mb-3" style={{ maxWidth: "450px" }}>
             <div className="row g-0">
               <div className="col-md-4">
-                <img src={hus} className="img-fluid rounded-start" alt="..." />
+                <img src={file} className="img-fluid rounded-start" alt="..." />
               </div>
               <div className="col-md-8">
                 <div className="card-body">
@@ -92,7 +106,11 @@ export const HomeComponent = () => {
           <div className="card mb-3" style={{ maxWidth: "450px" }}>
             <div className="row g-0">
               <div className="col-md-4">
-                <img src={hus} className="img-fluid rounded-start" alt="..." />
+                <img
+                  src={checklist}
+                  className="img-fluid rounded-start"
+                  alt="..."
+                />
               </div>
               <div className="col-md-8">
                 <div className="card-body">
@@ -117,7 +135,11 @@ export const HomeComponent = () => {
           <div className="card mb-3" style={{ maxWidth: "450px" }}>
             <div className="row g-0">
               <div className="col-md-4">
-                <img src={hus} className="img-fluid rounded-start" alt="..." />
+                <img
+                  src={timer}
+                  className="img-fluid rounded-start"
+                  alt="..."
+                />
               </div>
               <div className="col-md-8">
                 <div className="card-body">
@@ -144,7 +166,11 @@ export const HomeComponent = () => {
           <div className="card mb-3" style={{ maxWidth: "450px" }}>
             <div className="row g-0">
               <div className="col-md-4">
-                <img src={hus} className="img-fluid rounded-start" alt="..." />
+                <img
+                  src={addUser}
+                  className="img-fluid rounded-start"
+                  alt="..."
+                />
               </div>
               <div className="col-md-8">
                 <div className="card-body">
@@ -169,7 +195,7 @@ export const HomeComponent = () => {
           <div className="card mb-3" style={{ maxWidth: "450px" }}>
             <div className="row g-0">
               <div className="col-md-4">
-                <img src={hus} className="img-fluid rounded-start" alt="..." />
+                <img src={todo} className="img-fluid rounded-start" alt="..." />
               </div>
               <div className="col-md-8">
                 <div className="card-body">
@@ -194,7 +220,7 @@ export const HomeComponent = () => {
           <div className="card mb-3" style={{ maxWidth: "450px" }}>
             <div className="row g-0">
               <div className="col-md-4">
-                <img src={hus} className="img-fluid rounded-start" alt="..." />
+                <img src={todo} className="img-fluid rounded-start" alt="..." />
               </div>
               <div className="col-md-8">
                 <div className="card-body">
