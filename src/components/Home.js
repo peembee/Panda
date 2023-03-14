@@ -4,18 +4,16 @@ import { Link } from "react-router-dom";
 import hus from "../images/hus.png";
 
 export const HomeComponent = () => {
-
   return (
     <div>
       <main className="mainsection">
-      <div className="title">
+        <div className="title">
           <h3>En sida som räknar och håller koll på dina tider.</h3>
           <h1>- Så att du slipper.</h1>
         </div>
 
         <div className="section">
-
-        {/* Card 1 */}
+          {/* Card 1 */}
           <div className="card mb-3" style={{ maxWidth: "450px" }}>
             <div className="row g-0">
               <div className="col-md-4">
@@ -40,7 +38,7 @@ export const HomeComponent = () => {
             </div>
           </div>
 
-        {/* Card 2 */}
+          {/* Card 2 */}
           <div className="card mb-3" style={{ maxWidth: "450px" }}>
             <div className="row g-0">
               <div className="col-md-4">
@@ -65,7 +63,7 @@ export const HomeComponent = () => {
             </div>
           </div>
 
-        {/* Card 3 */}
+          {/* Card 3 */}
           <div className="card mb-3" style={{ maxWidth: "450px" }}>
             <div className="row g-0">
               <div className="col-md-4">
@@ -90,7 +88,7 @@ export const HomeComponent = () => {
             </div>
           </div>
 
-        {/* Card 4 */}
+          {/* Card 4 */}
           <div className="card mb-3" style={{ maxWidth: "450px" }}>
             <div className="row g-0">
               <div className="col-md-4">
@@ -115,7 +113,7 @@ export const HomeComponent = () => {
             </div>
           </div>
 
-        {/* Card 5 */}
+          {/* Card 5 */}
           <div className="card mb-3" style={{ maxWidth: "450px" }}>
             <div className="row g-0">
               <div className="col-md-4">
@@ -124,7 +122,9 @@ export const HomeComponent = () => {
               <div className="col-md-8">
                 <div className="card-body">
                   <h5 className="card-title">Tidsrapportering</h5>
-                  <p className="card-text">Här rapporterar man tid för projektet.</p>
+                  <p className="card-text">
+                    Här rapporterar man tid för projektet.
+                  </p>
                   <p className="card-text">
                     <small className="text-muted">
                       Last updated 3 mins ago
@@ -140,32 +140,41 @@ export const HomeComponent = () => {
             </div>
           </div>
 
-        {/* Card 6 */}
-          <div className="card mb-3" style={{ maxWidth: "450px" }}>
-            <div className="row g-0">
-              <div className="col-md-4">
-                <img src={hus} className="img-fluid rounded-start" alt="..." />
-              </div>
-              <div className="col-md-8">
-                <div className="card-body">
-                  <h5 className="card-title">Lägg till personal</h5>
-                  <p className="card-text">Här lägger man till personal.</p>
-                  <p className="card-text">
-                    <small className="text-muted">
-                      Last updated 3 mins ago
-                    </small>
-                  </p>
+          {/* Card 6 */}
+          <div
+            className="card-wrapper"
+            data-tooltip="Här lägger man till personal."
+          >
+            <div className="card mb-3" style={{ maxWidth: "450px" }}>
+              <div className="row g-0">
+                <div className="col-md-4">
+                  <img
+                    src={hus}
+                    className="img-fluid rounded-start"
+                    alt="..."
+                  />
                 </div>
-                <div>
-                  <Link to="/addEmployee">
-                    <Button>Lägg till</Button>
-                  </Link>
+                <div className="col-md-8">
+                  <div className="card-body">
+                    <h5 className="card-title">Lägg till personal</h5>
+                    <p className="card-text">Här lägger man till personal.</p>
+                    <p className="card-text">
+                      <small className="text-muted">
+                        Last updated 3 mins ago
+                      </small>
+                    </p>
+                  </div>
+                  <div>
+                    <Link to="/addEmployee">
+                      <Button>Lägg till</Button>
+                    </Link>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
 
-        {/* Card 7 */}
+          {/* Card 7 */}
           <div className="card mb-3" style={{ maxWidth: "450px" }}>
             <div className="row g-0">
               <div className="col-md-4">
@@ -189,8 +198,8 @@ export const HomeComponent = () => {
               </div>
             </div>
           </div>
-          
-        {/* Card 8 */}
+
+          {/* Card 8 */}
           <div className="card mb-3" style={{ maxWidth: "450px" }}>
             <div className="row g-0">
               <div className="col-md-4">

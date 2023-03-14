@@ -25,19 +25,45 @@ body {
   flex-wrap: wrap;
 }
 
-
 .section {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-gap: 20px;
-    place-items: center;
-    margin-top: 3%;
-    margin-bottom: 3%;
-    width: 100%;
-    }
-    
-    @media screen and (max-width: 600px) {
-    .section {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 20px;
+  place-items: center;
+  margin-top: 3%;
+  margin-bottom: 3%;
+  width: 100%;
+}
+
+@media screen and (max-width: 600px) {
+  .section {
     grid-template-columns: 1fr;
-    }
-    }
+  }
+}
+
+.card-wrapper {
+  position: relative;
+}
+
+.card-wrapper:hover::before {
+  content: attr(data-tooltip); /* visa värdet av attributet data-tooltip */
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #fff;
+  padding: 10px;
+  border: 1px solid #ccc;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+  z-index: 1;
+}
+
+.card:hover {
+  transform: scale(1.1); /* förstorar kortet till 110% av sin ursprungliga storlek */
+  transition: transform 0.3s ease-in-out; /* skapar en mjuk övergång till förstoringsanimationen */
+}
+
+.card:hover {
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.4);
+}
+
+
