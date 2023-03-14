@@ -132,7 +132,7 @@ export const HomeComponent = () => {
                   </p>
                 </div>
                 <div>
-                  <Link to="/timeLog">
+                  <Link to="/reportTime">
                     <Button>Tidsrapportering</Button>
                   </Link>
                 </div>
