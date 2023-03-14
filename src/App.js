@@ -20,7 +20,7 @@ let signedIn = true;
 function App() {
   if(signedIn === true){      
     return (     
-        <div>
+        <div className="body">
         <NavbarComponent/> 
           <Routes>
           <Route path="/" element={<HomeComponent />} />

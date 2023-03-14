@@ -7,7 +7,7 @@
   box-shadow: 5px 50px 100px rgba(66, 3, 36, 0.653);
 }
 
-body {
+.body {
   padding-top: 50px;
   background: linear-gradient(
     to right,
@@ -26,7 +26,7 @@ body {
 }
 
 .homePageCardColor{
-  background-color: rgb(253, 5, 5);
+  background-color: red;
 }
 
 .section {
