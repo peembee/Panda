@@ -2,6 +2,7 @@ import React from "react";
 import Button from "react-bootstrap/Button";
 import { Link } from "react-router-dom";
 import hus from "../images/hus.png";
+
 export const HomeComponent = () => {
   return (
     <div>
@@ -131,7 +132,7 @@ export const HomeComponent = () => {
                   </p>
                 </div>
                 <div>
-                  <Link to="/reportTime">
+                  <Link to="/timeLog">
                     <Button>Tidsrapportering</Button>
                   </Link>
                 </div>
@@ -140,34 +141,25 @@ export const HomeComponent = () => {
           </div>
 
           {/* Card 6 */}
-          <div
-            className="card-wrapper"
-            data-tooltip="Här lägger man till personal."
-          >
-            <div className="card mb-3" style={{ maxWidth: "450px" }}>
-              <div className="row g-0">
-                <div className="col-md-4">
-                  <img
-                    src={hus}
-                    className="img-fluid rounded-start"
-                    alt="..."
-                  />
+          <div className="card mb-3" style={{ maxWidth: "450px" }}>
+            <div className="row g-0">
+              <div className="col-md-4">
+                <img src={hus} className="img-fluid rounded-start" alt="..." />
+              </div>
+              <div className="col-md-8">
+                <div className="card-body">
+                  <h5 className="card-title">Lägg till personal</h5>
+                  <p className="card-text">Här lägger man till personal.</p>
+                  <p className="card-text">
+                    <small className="text-muted">
+                      Last updated 3 mins ago
+                    </small>
+                  </p>
                 </div>
-                <div className="col-md-8">
-                  <div className="card-body">
-                    <h5 className="card-title">Lägg till personal</h5>
-                    <p className="card-text">Här lägger man till personal.</p>
-                    <p className="card-text">
-                      <small className="text-muted">
-                        Last updated 3 mins ago
-                      </small>
-                    </p>
-                  </div>
-                  <div>
-                    <Link to="/addEmployee">
-                      <Button>Lägg till</Button>
-                    </Link>
-                  </div>
+                <div>
+                  <Link to="/addEmployee">
+                    <Button>Lägg till</Button>
+                  </Link>
                 </div>
               </div>
             </div>
