@@ -8,12 +8,27 @@
 }
 
 .body {
-  padding-top: 50px;
+  padding-top: 15px;
   background: linear-gradient(
     to right,
     rgb(80, 80, 80) 0%,
     rgb(211, 211, 211) 100%
   );
+  /* background-image: url(../images/bakgrundprojekt3.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center; */
+}
+
+.titlehome {
+  margin-top: 3%;
+}
+
+.homePage {
+  background-image: url(../images/bakgrundprojekt3.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
 }
 
 .mainsection {
@@ -26,7 +41,7 @@
 }
 
 .homePageCardColor{
-  background-color: red;
+  background-color: rgb(215, 215, 215);
 }
 
 .section {
@@ -55,3 +70,5 @@
   transition: transform 0.3s ease-in-out; /* skapar en mjuk övergång till förstoringsanimationen */
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.4);
 }
+
+

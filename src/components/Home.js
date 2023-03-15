@@ -14,9 +14,9 @@ import todo from "../images/help.png";
 
 export const HomeComponent = () => {
   return (
-    <div>
+    <div className="homePage">
       <main className="mainsection">
-        <div className="title">
+        <div className="titlehome">
           <h3>En sida som räknar och håller koll på dina tider.</h3>
           <h1>- Så att du slipper.</h1>
         </div>
@@ -53,7 +53,7 @@ export const HomeComponent = () => {
 
           {/* Card 2 */}
           <div className="card mb-3" style={{ maxWidth: "450px" }}>
-            <div className="row g-0">
+            <div className="row g-0 homePageCardColor">
               <div className="col-md-4">
                 <img
                   src={documents}
@@ -82,7 +82,7 @@ export const HomeComponent = () => {
 
           {/* Card 3 */}
           <div className="card mb-3" style={{ maxWidth: "450px" }}>
-            <div className="row g-0">
+            <div className="row g-0 homePageCardColor">
               <div className="col-md-4">
                 <img src={file} className="img-fluid rounded-start" alt="..." />
               </div>
@@ -107,7 +107,7 @@ export const HomeComponent = () => {
 
           {/* Card 4 */}
           <div className="card mb-3" style={{ maxWidth: "450px" }}>
-            <div className="row g-0">
+            <div className="row g-0 homePageCardColor">
               <div className="col-md-4">
                 <img
                   src={checklist}
@@ -136,7 +136,7 @@ export const HomeComponent = () => {
 
           {/* Card 5 */}
           <div className="card mb-3" style={{ maxWidth: "450px" }}>
-            <div className="row g-0">
+            <div className="row g-0 homePageCardColor">
               <div className="col-md-4">
                 <img
                   src={timer}
@@ -167,7 +167,7 @@ export const HomeComponent = () => {
 
           {/* Card 6 */}
           <div className="card mb-3" style={{ maxWidth: "450px" }}>
-            <div className="row g-0">
+            <div className="row g-0 homePageCardColor">
               <div className="col-md-4">
                 <img
                   src={addUser}
@@ -196,7 +196,7 @@ export const HomeComponent = () => {
 
           {/* Card 7 */}
           <div className="card mb-3" style={{ maxWidth: "450px" }}>
-            <div className="row g-0">
+            <div className="row g-0 homePageCardColor">
               <div className="col-md-4">
                 <img src={todo} className="img-fluid rounded-start" alt="..." />
               </div>
@@ -221,7 +221,7 @@ export const HomeComponent = () => {
 
           {/* Card 8 */}
           <div className="card mb-3" style={{ maxWidth: "450px" }}>
-            <div className="row g-0">
+            <div className="row g-0 homePageCardColor">
               <div className="col-md-4">
                 <img src={todo} className="img-fluid rounded-start" alt="..." />
               </div>
