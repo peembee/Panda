@@ -58,6 +58,9 @@
   .section {
     grid-template-columns: 1fr;
   }
+  .titlehome {
+    padding-top: 13%;
+  }
 }
 
 .card{
