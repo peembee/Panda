@@ -8,7 +8,7 @@
 }
 
 .body {
-  padding-top: 15px;
+  padding-top: 50px;
   background: linear-gradient(
     to right,
     rgb(80, 80, 80) 0%,
@@ -25,6 +25,7 @@
 }
 
 .homePage {
+  /* padding-top: 50px; */
   background-image: url(../images/bakgrundprojekt3.jpg);
   background-size: cover;
   background-repeat: no-repeat;
@@ -52,6 +53,18 @@
   margin-top: 3%;
   margin-bottom: 3%;
   width: 100%;
+}
+
+#buttoncss {
+  background-color: rgb(95, 95, 95);
+  border-color: rgb(95, 95, 95);
+  box-shadow: none;
+}
+
+#buttoncss:hover {
+  background-color: #e25656;
+  border-color: #e25656;
+  box-shadow: none;
 }
 
 @media screen and (max-width: 600px) {

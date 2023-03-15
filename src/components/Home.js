@@ -9,6 +9,7 @@ import file from "../images/file.png";
 import documents from "../images/documents.png";
 import addUser from "../images/addUser.png";
 import checklist from "../images/checklist.png";
+import overview from "../images/view.png";
 import todo from "../images/help.png";
 
 
@@ -44,7 +45,7 @@ export const HomeComponent = () => {
                 </div>
                 <div>
                   <Link to="/newProject">
-                    <Button>Skapa nytt projekt</Button>
+                    <Button id="buttoncss">Skapa nytt projekt</Button>
                   </Link>
                 </div>
               </div>
@@ -73,7 +74,7 @@ export const HomeComponent = () => {
                 </div>
                 <div>
                   <Link to="/activeProjects">
-                    <Button>Aktiva projekt</Button>
+                    <Button id="buttoncss">Aktiva projekt</Button>
                   </Link>
                 </div>
               </div>
@@ -98,7 +99,7 @@ export const HomeComponent = () => {
                 </div>
                 <div>
                   <Link to="/InactiveProjects">
-                    <Button>Tidigare projekt</Button>
+                    <Button id="buttoncss">Tidigare projekt</Button>
                   </Link>
                 </div>
               </div>
@@ -127,7 +128,7 @@ export const HomeComponent = () => {
                 </div>
                 <div>
                   <Link to="/projectsList">
-                    <Button>Projektlista</Button>
+                    <Button id="buttoncss">Projektlista</Button>
                   </Link>
                 </div>
               </div>
@@ -158,7 +159,7 @@ export const HomeComponent = () => {
                 </div>
                 <div>
                   <Link to="/reportTime">
-                    <Button>Tidsrapportering</Button>
+                    <Button id="buttoncss">Tidsrapportering</Button>
                   </Link>
                 </div>
               </div>
@@ -187,7 +188,7 @@ export const HomeComponent = () => {
                 </div>
                 <div>
                   <Link to="/addEmployee">
-                    <Button>Lägg till</Button>
+                    <Button id="buttoncss">Lägg till</Button>
                   </Link>
                 </div>
               </div>
@@ -198,7 +199,7 @@ export const HomeComponent = () => {
           <div className="card mb-3" style={{ maxWidth: "450px" }}>
             <div className="row g-0 homePageCardColor">
               <div className="col-md-4">
-                <img src={todo} className="img-fluid rounded-start" alt="..." />
+                <img src={overview} className="img-fluid rounded-start" alt="..." />
               </div>
               <div className="col-md-8">
                 <div className="card-body">
@@ -212,7 +213,7 @@ export const HomeComponent = () => {
                 </div>
                 <div>
                   <Link to="/displayEmployees">
-                    <Button>Översikt</Button>
+                    <Button id="buttoncss">Översikt</Button>
                   </Link>
                 </div>
               </div>
@@ -237,7 +238,7 @@ export const HomeComponent = () => {
                 </div>
                 <div>
                   <Link to="/newProject">
-                    <Button>Skapa nytt projekt</Button>
+                    <Button id="buttoncss">Skapa nytt projekt</Button>
                   </Link>
                 </div>
               </div>
