@@ -49,9 +49,9 @@ export function SignInCompoment() {
                 style={{ borderRadius: "1rem", maxWidth: "500px" }}
               >
                 <MDBCardBody className="p-5 w-100 d-flex flex-column">
-                  <h2 className="fw-bold mb-2 text-center">Sign in</h2>
-                  <p className="text-white-50 mb-3">
-                    Please enter your login and password!
+                  <h2 className="fw-bold mb-2 text-center">Logga in</h2>
+                  <p className="text-black-50 text-center mb-3">
+                    Vänligen skriv in dina inloggningsuppgifter!
                   </p>
                   <MDBInput
                     wrapperClass="mb-4 w-100"
@@ -71,13 +71,13 @@ export function SignInCompoment() {
                     name="flexCheck"
                     id="flexCheckDefault"
                     className="mb-4"
-                    label="Remember password"
+                    label="Kom ihåg lösenordet"
                   />
                   <MDBBtn
                     size="lg"
                     style={{ backgroundColor: "green", color: "white" }}
                   >
-                    Login
+                    Logga in
                   </MDBBtn>
                   <hr className="my-4" />
                   <MDBBtn
@@ -86,7 +86,7 @@ export function SignInCompoment() {
                     style={{ backgroundColor: "#dd4b39" }}
                   >
                     <MDBIcon fab icon="fa-duotone fa-n" className="mx-2" />-
-                    Sign in with Notion
+                    Logga in med Notion
                   </MDBBtn>
                 </MDBCardBody>
               </MDBCard>
