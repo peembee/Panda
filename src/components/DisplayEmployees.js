@@ -41,18 +41,23 @@ export function DisplayEmployees() {
     );
   } else {
     return (
-      <div className="display-container">
-        {swaggerData.map((swaggerData) => (
-          <div className="display-module" key={swaggerData.employeeId}>
-            <p>{"ID nummer: " + swaggerData.employeeId}</p>
-            <p>{"Lösenord: " + swaggerData.password}</p>
-            <p>{"Förnamn: " + swaggerData.firstMidName}</p>
-            <p>{"Efternamn: " + swaggerData.lastName}</p>
-            <p>{"Address: " + swaggerData.address}</p>
-            <p>{"Stad: " + swaggerData.city}</p>
-            <p>{"PostNummer: " + swaggerData.postalCode}</p>
-          </div>
-        ))}
+      <div>
+        <div className="title-container">
+          <h1 className="displayTitle">Här är alla anställda i systemet</h1>
+        </div>
+        <div className="display-container">
+          {swaggerData.map((swaggerData) => (
+            <div className="display-module" key={swaggerData.employeeId}>
+              <p>{"ID nummer: " + swaggerData.employeeId}</p>
+              <p>{"Lösenord: " + swaggerData.password}</p>
+              <p>{"Förnamn: " + swaggerData.firstMidName}</p>
+              <p>{"Efternamn: " + swaggerData.lastName}</p>
+              <p>{"Address: " + swaggerData.address}</p>
+              <p>{"Stad: " + swaggerData.city}</p>
+              <p>{"PostNummer: " + swaggerData.postalCode}</p>
+            </div>
+          ))}
+        </div>
       </div>
     );
   }
