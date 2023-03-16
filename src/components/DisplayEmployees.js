@@ -47,6 +47,7 @@ export function DisplayEmployees() {
                         <div>
 
                             <p>{"ID nummer: " + swaggerData.employeeId}</p>
+                            <p>{"Lösenord: " + swaggerData.password}</p>
                             <p>{"Förnamn: " + swaggerData.firstMidName}</p>
                             <p>{"Efternamn: " + swaggerData.lastName}</p>
                             <p>{"Address: " + swaggerData.address}</p>
