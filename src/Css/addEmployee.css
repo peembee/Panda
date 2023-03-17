@@ -1,0 +1,11 @@
+.addEmployee {
+    padding: 50px;
+    width: 70%;
+}
+
+.title {
+    border-top: 2px solid rgba(0, 0, 0, 0.194);
+    color:rgba(0, 0, 0, 0.501);
+    transition: 0.5s;
+}
+
