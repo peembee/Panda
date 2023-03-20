@@ -1,11 +1,63 @@
 .addEmployee {
-    padding: 50px;
-    width: 70%;
+    padding: 100px;
+    width: 100%;
+    margin: 0 auto;
+    border-top: 2px solid rgba(0, 0, 0, 0.194);
+    background: linear-gradient(
+    to right,
+    rgb(80, 80, 80) 0%,
+    rgb(211, 211, 211) 100%
+  );
 }
 
 .title {
+    padding-top: 20px;
     border-top: 2px solid rgba(0, 0, 0, 0.194);
     color:rgba(0, 0, 0, 0.501);
     transition: 0.5s;
+    text-align: center;
 }
 
+.content {
+    padding-top: 50px;
+    
+}
+
+.form-group {
+    width: 50%;
+    border: 2px solid rgba(0, 0, 0, 0.194);
+    border-radius: 10px;
+    padding: 20px;
+}
+
+
+#submit {
+    margin-top: 20px;
+    margin-left: 20px;
+    
+}
+
+button {
+    background-color: rgb(95,95,95);
+    color: #fff
+}
+
+button:hover {
+    background-color: rgb(210, 210, 210);
+    border-color: rgb(95, 95, 95);
+    box-shadow: none;
+    color: black;
+    transform: scale(
+    1.1
+    ); /* förstorar kortet till 110% av sin ursprungliga storlek */
+    transition: transform 0.3s ease-in-out; /* skapar en mjuk övergång till förstoringsanimationen */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.4);
+}
+
+
+
+/* @media only screen and (max-width:768px){
+    .addEmployee {
+        width: 100%;
+    }
+} */

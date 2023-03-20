@@ -6,13 +6,12 @@ export function AddEmployee() {
 
   // Permission to save the values that the user fills in the form
   const [employee, setEmployee] = useState({
-    employeeId: '',
     firstMidName: '',
     lastName: '',
     address: '',
     city: '',
     postalCode: '',
-    passWord: '',
+    password: '',
     role: ''
   });
 
@@ -33,7 +32,7 @@ export function AddEmployee() {
         'Content-Type': 'application/json'
       },
       body: JSON.stringify(employee)
-    })
+      })
       .then((response) => {
         // Handle the response from the server
         if (!response.ok) {
@@ -43,13 +42,12 @@ export function AddEmployee() {
         alert('Employee created successfully!');
         // Reset the form to its original values 
         setEmployee({
-          employeeId: '',
           firstMidName: '',
           lastName: '',
           address: '',
           city: '',
           postalCode: '',
-          passWord: '',
+          password: '',
           role: ''
           
         });
@@ -64,24 +62,12 @@ export function AddEmployee() {
   return (
     <div className='addEmployee'>
       <h1 className='title'>Lägga till anställda i systemet</h1>
+      <div className='content'>
       <h3>Vänligen fyll i rutorna:</h3>
 
       {/* An HTML form component */}
-      <form onSubmit={handleSubmit}>
-        <Form.Group>
-          <Form.Label htmlFor="employeeId"></Form.Label>
-          {/* An input field for Employment ID, set to a default value (0) */}
-          <Form.Control
-            placeholder='Anställnings ID'
-            type="text"
-            id="employeeId"
-            name="employeeId"
-            defaultValue="0"
-            onChange={handleChange}
-            readOnly
-            required
-          />
-        </Form.Group>
+      <form onSubmit={handleSubmit} className="form-group">
+        
         <Form.Group>
           <Form.Label htmlFor="role"></Form.Label>
           {/* An role input field that updates the state when it changes */}
@@ -100,19 +86,21 @@ export function AddEmployee() {
           <option value="CEO">Chef</option>
           </Form.Control>
         </Form.Group>
+        
         <Form.Group>
-          <Form.Label htmlFor="passWord"></Form.Label>
+          <Form.Label htmlFor="password"></Form.Label>
           {/* An password input field that updates the state when it changes */}
           <Form.Control
             placeholder='Ange ett lösenord'
             type="text"
-            id="passWord"
-            name="passWord"
-            value={employee.passWord}
+            id="password"
+            name="password"
+            value={employee.password}
             onChange={handleChange}
             required
           />
         </Form.Group>
+
         <Form.Group>
           <Form.Label htmlFor="firstMidName"></Form.Label>
           {/* An first name input field that updates the state when it changes */}
@@ -126,11 +114,12 @@ export function AddEmployee() {
             required
           />
         </Form.Group>
+
         <Form.Group>
           <Form.Label htmlFor="lastName"></Form.Label>
           {/* An last name input field that updates the state when it changes */}
           <Form.Control
-          placeholder='Efternamn'
+            placeholder='Efternamn'
             type="text"
             id="lastName"
             name="lastName"
@@ -139,11 +128,12 @@ export function AddEmployee() {
             required
           />
         </Form.Group>
+
         <Form.Group>
           <Form.Label htmlFor="address"></Form.Label>
           {/* An address input field that updates the state when it change */}
           <Form.Control
-          placeholder='Adress'
+            placeholder='Adress'
             type="text"
             id="address"
             name="address"
@@ -152,6 +142,21 @@ export function AddEmployee() {
             required
           />
         </Form.Group>
+
+        <Form.Group>
+          <Form.Label htmlFor="postalCode"></Form.Label>
+          {/* An postal code input field that updates the state when it changes */}
+          <Form.Control
+            placeholder='Postnummer'
+            type="text"
+            id="postalCode"
+            name="postalCode"
+            value={employee.postalCode}
+            onChange={handleChange}
+            required
+          />
+        </Form.Group>
+
         <Form.Group>
           <Form.Label htmlFor="city"></Form.Label>
           {/* An city input field that updates the state when it changes */}
@@ -165,24 +170,13 @@ export function AddEmployee() {
             required
           />
         </Form.Group>
-        <Form.Group>
-          <Form.Label htmlFor="postalCode"></Form.Label>
-          {/* An postal code input field that updates the state when it changes */}
-          <Form.Control
-          placeholder='Postnummer'
-            type="text"
-            id="postalCode"
-            name="postalCode"
-            value={employee.postalCode}
-            onChange={handleChange}
-            required
-          />
-        </Form.Group>
         
-        <button type="reset">Återställ formuläret</button>
-        <button type="submit">Lägg till anställd</button>
+        
+        <button id='reset' type="reset">Återställ formuläret</button>
+        <button id='submit' type="submit">Lägg till anställd</button>
         
       </form>
+      </div>
     </div>
   );
 }
