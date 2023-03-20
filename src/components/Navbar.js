@@ -6,7 +6,7 @@ import { Container } from "react-bootstrap";
 import { Navbar, Nav} from "react-bootstrap";
 
 
-export const NavbarComponent = (props) => {
+export const NavbarComponent = ({handleSignOut}) => {
 
   useEffect(() => {
     // Hitta navbaren och sidans topposition
@@ -46,7 +46,7 @@ export const NavbarComponent = (props) => {
           <Nav className="ms-auto">
             <Nav.Link as={NavLink} to="/" className="navBartextContent">Home</Nav.Link>
             <Nav.Link as={NavLink} to="/Information" className="navBartextContent">Information</Nav.Link>
-            <Nav.Link as={NavLink} to="/signOut" className="navBartextContent">Sign Out</Nav.Link>
+            <Nav.Link as={NavLink} to="/" className="navBartextSignOut" onClick={handleSignOut}>Sign Out</Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>

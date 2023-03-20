@@ -45,5 +45,10 @@
   transition: 0.5s;
 }
 
-
+.navBartextSignOut {
+  
+}
+.navBartextSignOut:hover {
+  text-decoration: underline;  
+}
 

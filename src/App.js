@@ -1,5 +1,6 @@
 import "bootstrap/dist/css/bootstrap.css"
 import { Route, Routes } from "react-router-dom"
+import React, { useState, useEffect } from 'react';
 import "./Css/style.css";
 import { NavbarComponent } from './components/Navbar';
 import { HomeComponent } from './components/Home';
@@ -15,16 +16,36 @@ import { AddEmployee } from "./components/AddEmployee"
 import { DisplayEmployees } from "./components/DisplayEmployees";
 
 
-let signedIn = true;
+
+
+
+
 
 function App() {
-  if(signedIn === true){      
+  const [user, setUser] = useState({}); // user will be getting the Id-Data from SignInComponent. - Then send Id-Data to HomeComponent
+  const [showSignIn, setShowSignIn] = useState(true);
+
+  useEffect(() => {  // if userObject is empty, then show signIN-component else go straight to homePage
+    if (Object.keys(user).length === 0) {
+      setShowSignIn(true);
+    } 
+    else {
+      setShowSignIn(false);
+    }
+  }, [user]);
+
+  function handleSignOut() { // when signing out - the object will be empty, then signInComponent will be active.
+    setUser({});
+    setShowSignIn(true);
+  }
+
+
+  if(!showSignIn){      
     return (     
         <div className="body">
-        <NavbarComponent/> 
+        <NavbarComponent handleSignOut={handleSignOut}/> 
           <Routes>
-          <Route path="/" element={<HomeComponent />} />
-          <Route path="/panda" element={<HomeComponent />} />
+          <Route path="/" element={<HomeComponent sendUser={user} />} /> 
           <Route path="/newProject" element={<NewProject />} />
           <Route path="/activeProjects" element={<ActiveProjects />} />
           <Route path="/inactiveProjects" element={<InactiveProjects />} />
@@ -40,8 +61,8 @@ function App() {
   }
   else{
     return (
-      <div> 
-         <SignInCompoment/>   
+      <div>
+         <SignInCompoment setUser={setUser} /> 
       </div>    
     );
   }

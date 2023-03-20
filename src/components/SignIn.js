@@ -1,4 +1,5 @@
 import React from "react";
+import { useState, useEffect } from 'react';
 import { NavLink } from "react-router-dom";
 import { Container } from "react-bootstrap";
 import { Navbar, Nav } from "react-bootstrap";
@@ -16,7 +17,66 @@ import {
   MDBCheckbox,
 } from "mdb-react-ui-kit";
 
-export function SignInCompoment() {
+export function SignInCompoment({setUser}) {
+  const [id, setId] = useState();
+  const [password, setPassword] = useState();
+  const [sendUser, setSendUser] = useState({});
+
+  const [swaggerData, setSwaggerData] = useState([]);
+  const [error, setError] = useState(null);
+  const [loaded, setLoaded] = useState(false);
+//----------------------------------
+//---- getting api
+/*
+useEffect(() => {
+  fetch(
+    "https://axb22z45ygh20230227215753.azurewebsites.net/get-all-employees"
+  )
+    .then((res) => res.json())
+    .then(
+      (result) => {
+        setLoaded(true);
+        setSwaggerData(result);
+        console.log(result);
+      },
+      (error) => {
+        setLoaded(true);
+        setError(error);
+      }
+    );
+}, []);
+
+if (error) {
+  return console.log("Error: " + {error});
+}
+*/
+
+
+//----------------------------------
+//---- getting values from inputs
+  const inputFromUniqueId = (e) => {   // user enter id 
+    setId(e.target.value);
+  };
+  const inputFromPassword = (e) => {    // user enter their password
+    setPassword(e.target.value);
+  };
+
+
+//----------------------------------
+//---- function for checking if userId matchers their userPassword 
+  const handleSignIn = () =>{    // api - handler
+    
+
+
+
+
+
+    // om id och lösenord stämmer, skicka detta till app med personens alla uppgifter
+    setSendUser({ name: "id begäran skickad", password: "lösenord skickad" }); // object-data being saved
+
+    setUser(sendUser); // sending the saved object-data back to /APP.
+  }
+//----------------------------------
   return (
     <div>
       <div>
@@ -55,10 +115,11 @@ export function SignInCompoment() {
                   </p>
                   <MDBInput
                     wrapperClass="mb-4 w-100"
-                    label="Email address"
+                    label="Unique-ID"
                     id="formControlLg"
                     type="email"
                     size="lg"
+                    onChange={inputFromUniqueId}
                   />
                   <MDBInput
                     wrapperClass="mb-4 w-100"
@@ -66,6 +127,7 @@ export function SignInCompoment() {
                     id="formControlLg"
                     type="password"
                     size="lg"
+                    onChange={inputFromPassword}
                   />
                   <MDBCheckbox
                     name="flexCheck"
@@ -76,18 +138,11 @@ export function SignInCompoment() {
                   <MDBBtn
                     size="lg"
                     style={{ backgroundColor: "green", color: "white" }}
+                    onClick={handleSignIn}
                   >
                     Logga in
                   </MDBBtn>
                   <hr className="my-4" />
-                  <MDBBtn
-                    className="mb-2 w-100"
-                    size="lg"
-                    style={{ backgroundColor: "#dd4b39" }}
-                  >
-                    <MDBIcon fab icon="fa-duotone fa-n" className="mx-2" />-
-                    Logga in med Notion
-                  </MDBBtn>
                 </MDBCardBody>
               </MDBCard>
             </MDBCol>
