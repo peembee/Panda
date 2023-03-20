@@ -49,12 +49,13 @@ export function DisplayEmployees() {
           {swaggerData.map((swaggerData) => (
             <div className="display-module" key={swaggerData.employeeId}>
               <p>{"ID nummer: " + swaggerData.employeeId}</p>
-              <p>{"Lösenord: " + swaggerData.password}</p>
+              <p>{"Roll: " + swaggerData.role}</p>
               <p>{"Förnamn: " + swaggerData.firstMidName}</p>
               <p>{"Efternamn: " + swaggerData.lastName}</p>
               <p>{"Address: " + swaggerData.address}</p>
+              <p>{"Postnummer: " + swaggerData.postalCode}</p>
               <p>{"Stad: " + swaggerData.city}</p>
-              <p>{"PostNummer: " + swaggerData.postalCode}</p>
+              <p>{"Lösenord: " + swaggerData.password}</p>
             </div>
           ))}
         </div>
