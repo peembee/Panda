@@ -1,40 +1,59 @@
 import { Button } from "react-bootstrap";
-import { useEffect, useRef, useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 
-export function TimeLog(){
-  
-    const [time, setTime] = useState(0);
-    
-    useEffect(() =>{
-         return()=> clearInterval(id.current)
-    },[])
+export function TimeLog() {
+  const [time, setTime] = useState(0);
 
-    let id = useRef();
-    
+  useEffect(() => {
+    return () => clearInterval(id.current);
+  }, []);
 
-    function timeInterval(){
-       id.current = setInterval(() => {
-            setTime((prev) => prev + 1);
-         }, 1000);
-    }
-    
+  let id = useRef();
 
-    const boxStyle = {
-        padding: '10px',
-        marginBottom: '20px',
-        marginTop: '20px',
-        marginLeft: '20px',
-    };
+  function timeInterval() {
+    id.current = setInterval(() => {
+      setTime((prev) => prev + 1);
+    }, 1000);
+  }
 
+  function getSeconds() {
+    return `Sekunder: ${time % 60}`;
+  }
 
-    return (
-        <div style={boxStyle}>
-        <h1>{time}</h1>
-        <Button onClick={() => timeInterval()}>start WOrk</Button>
-        <Button onClick={() => clearInterval(id.current)}>Lunch Break</Button>
-        <Button onClick={() => {
-            clearInterval(id.current); 
-            setTime(0)} }>End Work</Button>
-        </div>
-    )
+  function getMinutes() {
+    const minutes = Math.floor(time / 60);
+    return `Minuter: ${minutes % 60}`;
+  }
+
+  function getHours() {
+    const hours = Math.floor(time / 3600);
+    return `Timmar: ${hours}`;
+  }
+
+  const boxStyle = {
+    padding: "10px",
+    marginBottom: "20px",
+    marginTop: "20px",
+    marginLeft: "20px",
+  };
+
+  return (
+    <div style={boxStyle}>
+      <h1>{time}</h1>
+      <p>{getSeconds()}</p>
+      <p>{getMinutes()}</p>
+      <p>{getHours()}</p>
+      <Button onClick={() => timeInterval()}>start WOrk</Button>
+      <Button onClick={() => clearInterval(id.current)}>Lunch Break</Button>
+      <Button
+        onClick={() => {
+          clearInterval(id.current);
+          setTime(0);
+        }}
+      >
+        End Work
+      </Button>
+    </div>
+  );
 }
+
