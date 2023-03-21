@@ -41,7 +41,7 @@ export function DisplayEmployees() {
     );
   } else {
     return (
-      <div>
+      <div className="bodyDisplayEmployees">
         <div className="title-container">
           <h1 className="displayTitle">Här är alla anställda i systemet</h1>
         </div>

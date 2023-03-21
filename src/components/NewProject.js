@@ -86,6 +86,7 @@ export function NewProject() {
 
 
   return (
+   <div className="bodyNewProject">
       <form>
             <div class="newProject">
                <h1 class="title">Create a new Project by fill in the form</h1>      
@@ -131,7 +132,8 @@ export function NewProject() {
             <Button variant="secondary" onClick={() => setShow(false)}>Close Modal</Button>
             </Modal.Footer>
          </Modal>
-   </form>
+      </form>
+   </div>
   )
 }
 
