@@ -1,6 +1,6 @@
 import React from "react";
 import { useState, useEffect } from 'react';
-import { NavLink } from "react-router-dom";
+
 import { Container } from "react-bootstrap";
 import { Navbar, Nav } from "react-bootstrap";
 import "../Css/style.css";
@@ -27,7 +27,7 @@ export function SignInCompoment({setUser}) {
   const [loaded, setLoaded] = useState(false);
 //----------------------------------
 //---- getting api
-/*
+
 useEffect(() => {
   fetch(
     "https://axb22z45ygh20230227215753.azurewebsites.net/get-all-employees"
@@ -37,7 +37,7 @@ useEffect(() => {
       (result) => {
         setLoaded(true);
         setSwaggerData(result);
-        console.log(result);
+        console.log("resultat från api::  ", swaggerData);
       },
       (error) => {
         setLoaded(true);
@@ -49,7 +49,7 @@ useEffect(() => {
 if (error) {
   return console.log("Error: " + {error});
 }
-*/
+
 
 
 //----------------------------------
@@ -64,17 +64,34 @@ if (error) {
 
 //----------------------------------
 //---- function for checking if userId matchers their userPassword 
-  const handleSignIn = () =>{    // api - handler
-    
-
-
-
-
-
-    // om id och lösenord stämmer, skicka detta till app med personens alla uppgifter
-    setSendUser({ name: "id begäran skickad", password: "lösenord skickad" }); // object-data being saved
-
-    setUser(sendUser); // sending the saved object-data back to /APP.
+  const handleSignIn = () =>{    // api - handler'
+    let matchData = false; 
+    for(let i = 0; i < swaggerData.length; i++){
+      if(id == swaggerData[i].employeeId && password  == swaggerData[i].password){     
+            matchData = true;
+            // om id och lösenord stämmer, skicka detta till app med personens alla uppgifter          
+            setSendUser({ 
+              ...sendUser,
+              uniqueId: swaggerData[i].employeeId,
+              firstName: swaggerData[i].firstMidName,
+              lastName: swaggerData[i].lastName,
+              address: swaggerData[i].address,
+              city: swaggerData[i].city,
+              postalCode: swaggerData[i].postalCode,
+              password: swaggerData[i].password,
+              role: swaggerData[i].role
+                        }); // object-data being saved          
+        
+      }        
+      if(matchData){
+        setUser(sendUser); // sending the saved object-data back to /APP.
+        console.log("korrekt: nu är userdata = : ", sendUser) 
+        break;
+      } 
+    }   
+    if(!matchData){
+      console.log("Fel lösen elr anv-namn")   
+    }
   }
 //----------------------------------
   return (
