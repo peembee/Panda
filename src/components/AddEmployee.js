@@ -80,7 +80,7 @@ export function AddEmployee() {
             onChange={handleChange}
             required
           >
-          <option value="">Välj ett exempel</option>
+          <option value="">Välj ett alternativ</option>
           <option value="Employee">Personal</option>
           <option value="Admin">Administratör</option>
           <option value="CEO">Chef</option>
