@@ -1,19 +1,44 @@
 .bodyDisplayEmployees {
+    padding: 100px;
     border-top: 2px solid rgba(0, 0, 0, 0.194);
-    background: linear-gradient(
-    to right,
-    rgb(80, 80, 80) 0%,
-    rgb(211, 211, 211) 100%
-  );
+    background: rgb(80, 80, 80);
 }
 
 .display-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  
+  
 }
 
-.display-module {
+.table-striped tbody tr:nth-child(even) {
+  background-color: #ccc;
+}
+
+.table-striped tbody tr:nth-child(odd) {
+  background-color: #a8a8a8;
+}
+
+table {
+  border-spacing: 20px;
+  
+}
+
+td, th {
+  padding: 15px;
+  line-height: 2.0;
+}
+
+tbody tr {
+  border-bottom: 1px solid black;
+}
+
+table {
+  margin: 0 auto;
+}
+
+/* .display-module {
   width: 300px;
   margin: 20px;
   padding: 10px;
@@ -28,13 +53,20 @@
   background-color: #fff;
   transform: scale(1.1);
   transition: transform 0.3s ease-in-out;
-}
+} */
 
 .title-container {
+  border-top: 2px solid rgba(0, 0, 0, 0.194);
   text-align: center;
   margin-bottom: 20px;
+  padding-top: 50px;
 }
 
 .displayTitle {
-  margin-top: 0;
+  color: #ccc  
+}
+
+th {
+  color: #ccc;
+  text-align: center;
 }

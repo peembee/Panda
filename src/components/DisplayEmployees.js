@@ -43,21 +43,38 @@ export function DisplayEmployees() {
     return (
       <div className="bodyDisplayEmployees">
         <div className="title-container">
-          <h1 className="displayTitle">Här är alla anställda i systemet</h1>
+          <h1 className="displayTitle">Anställda i systemet</h1>
         </div>
-        <div className="display-container">
-          {swaggerData.map((swaggerData) => (
-            <div className="display-module" key={swaggerData.employeeId}>
-              <p>{"ID nummer: " + swaggerData.employeeId}</p>
-              <p>{"Roll: " + swaggerData.role}</p>
-              <p>{"Förnamn: " + swaggerData.firstMidName}</p>
-              <p>{"Efternamn: " + swaggerData.lastName}</p>
-              <p>{"Address: " + swaggerData.address}</p>
-              <p>{"Postnummer: " + swaggerData.postalCode}</p>
-              <p>{"Stad: " + swaggerData.city}</p>
-              <p>{"Lösenord: " + swaggerData.password}</p>
-            </div>
-          ))}
+        <div className="table-responsive">
+        <table className="table-striped">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Roll</th>
+      <th>Förnamn</th>
+      <th>Efternamn</th>
+      <th>Adress</th>
+      <th>Postnummer</th>
+      <th>Ort</th>
+      <th>Lösenord</th>
+    </tr>
+  </thead>
+  <tbody className="table-group-divider">
+    {swaggerData.map((swaggerData) => (
+      <tr key={swaggerData.employeeId}>
+      <td>{swaggerData.employeeId}</td>
+      <td>{swaggerData.role}</td>
+      <td>{swaggerData.firstMidName}</td>
+      <td>{swaggerData.lastName}</td>
+      <td>{swaggerData.address}</td>
+      <td>{swaggerData.postalCode}</td>
+      <td>{swaggerData.city}</td>
+      <td>{swaggerData.password}</td>
+      <td colSpan="8" className="black-row"></td>
+    </tr>
+    ))}
+  </tbody>
+</table>
         </div>
       </div>
     );
