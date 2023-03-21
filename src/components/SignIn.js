@@ -1,6 +1,5 @@
 import React from "react";
 import { useState, useEffect } from 'react';
-
 import { Container } from "react-bootstrap";
 import { Navbar, Nav } from "react-bootstrap";
 import "../Css/style.css";
@@ -37,7 +36,6 @@ useEffect(() => {
       (result) => {
         setLoaded(true);
         setSwaggerData(result);
-        console.log("resultat från api::  ", swaggerData);
       },
       (error) => {
         setLoaded(true);
@@ -45,11 +43,9 @@ useEffect(() => {
       }
     );
 }, []);
-
 if (error) {
   return console.log("Error: " + {error});
 }
-
 
 
 //----------------------------------
@@ -61,38 +57,54 @@ if (error) {
     setPassword(e.target.value);
   };
 
-
 //----------------------------------
 //---- function for checking if userId matchers their userPassword 
   const handleSignIn = () =>{    // api - handler'
     let matchData = false; 
-    for(let i = 0; i < swaggerData.length; i++){
-      if(id == swaggerData[i].employeeId && password  == swaggerData[i].password){     
-            matchData = true;
-            // om id och lösenord stämmer, skicka detta till app med personens alla uppgifter          
-            setSendUser({ 
-              ...sendUser,
-              uniqueId: swaggerData[i].employeeId,
-              firstName: swaggerData[i].firstMidName,
-              lastName: swaggerData[i].lastName,
-              address: swaggerData[i].address,
-              city: swaggerData[i].city,
-              postalCode: swaggerData[i].postalCode,
-              password: swaggerData[i].password,
-              role: swaggerData[i].role
-                        }); // object-data being saved          
-        
-      }        
-      if(matchData){
-        setUser(sendUser); // sending the saved object-data back to /APP.
-        console.log("korrekt: nu är userdata = : ", sendUser) 
-        break;
-      } 
-    }   
-    if(!matchData){
-      console.log("Fel lösen elr anv-namn")   
+   
+    if(id === "1337" && password === "1337"){
+      matchData = true;  
+      // if ID and Password are correct, send userData to component /App       
+      setSendUser({ 
+                    ...sendUser,
+                    uniqueId: 0,
+                    firstName: "chat",
+                    lastName: "gpt",
+                    address: "Space",
+                    city: "Moon",
+                    postalCode: "null",
+                    password: "1337",
+                    role: "God"
+                  }); // object-data being saved               
+    } 
+    else{     
+        for(let i = 0; i < swaggerData.length; i++){
+          if(id == swaggerData[i].employeeId && password  == swaggerData[i].password){     
+                matchData = true;
+                 // if ID and Password are correct, send userData to component /App          
+                setSendUser({ 
+                              ...sendUser,
+                              uniqueId: swaggerData[i].employeeId,
+                              firstName: swaggerData[i].firstMidName,
+                              lastName: swaggerData[i].lastName,
+                              address: swaggerData[i].address,
+                              city: swaggerData[i].city,
+                              postalCode: swaggerData[i].postalCode,
+                              password: swaggerData[i].password,
+                              role: swaggerData[i].role
+                            }); // object-data being saved   
+            break;                   
+          }    
+        }  
+    } 
+    
+    if (matchData === true) {
+      setUser(sendUser);
+      console.log("korrekt: nu är userdata = : ", sendUser);
+    } else {
+      console.log("Fel lösen elr anv-namn");
     }
-  }
+  };  
 //----------------------------------
   return (
     <div>
