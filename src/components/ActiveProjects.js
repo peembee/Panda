@@ -33,7 +33,7 @@ export function ActiveProjects() {
       <div>
           <h2 className="loadingTitle">Loading</h2>
           <div className="spinner-border text-danger loadingIcon" role="status">
-          <span class="visually-hidden">Loading...</span>
+          <span className="visually-hidden">Loading...</span>
         </div>
       </div>
     );
@@ -61,7 +61,7 @@ export function ActiveProjects() {
                   <td>{project.projectId}</td>
                   <td>{project.projectName}</td>
                   <td>{project.description}</td>
-                  <td colSpan="8" className="black-rowS"></td>
+                  <td colSpan="8" className="black-rows"></td>
                 </tr>
               ))}
             </tbody>
