@@ -1,0 +1,44 @@
+.bodyProjectList {
+  padding: 100px;
+  border-top: 2px solid rgba(0, 0, 0, 0.194);
+  background: rgb(80, 80, 80);
+}
+
+.table-striped tbody tr:nth-child(even) {
+  background-color: #ccc;
+}
+
+.table-striped tbody tr:nth-child(odd) {
+  background-color: #a8a8a8;
+}
+
+table {
+  border-spacing: 20px;
+}
+
+td,
+th {
+  padding: 15px;
+  line-height: 2;
+}
+
+tbody {
+  margin: 0 auto;
+}
+
+.title-container {
+  border-top: 2px solid rgba(0, 0, 0, 0.194);
+  text-align: center;
+  margin-bottom: 20px;
+  padding-top: 50px;
+}
+
+h1 {
+  color: #ccc;
+}
+
+th {
+  color: #ccc;
+  text-align: center;
+}
+
