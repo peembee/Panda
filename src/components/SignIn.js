@@ -12,8 +12,6 @@ import {
   MDBCard,
   MDBCardBody,
   MDBInput,
-  MDBIcon,
-  MDBCheckbox,
 } from "mdb-react-ui-kit";
 
 export function SignInCompoment({setUser}) {
@@ -79,7 +77,7 @@ if (error) {
     } 
     else{     
         for(let i = 0; i < swaggerData.length; i++){
-          if(id == swaggerData[i].employeeId && password  == swaggerData[i].password){     
+          if(id === swaggerData[i].employeeId && password  === swaggerData[i].password){     
                 matchData = true;
                  // if ID and Password are correct, send userData to component /App          
                 setSendUser({ 
@@ -157,12 +155,6 @@ if (error) {
                     type="password"
                     size="lg"
                     onChange={inputFromPassword}
-                  />
-                  <MDBCheckbox
-                    name="flexCheck"
-                    id="flexCheckDefault"
-                    className="mb-4"
-                    label="Kom ihåg lösenordet"
                   />
                   <MDBBtn
                     size="lg"
