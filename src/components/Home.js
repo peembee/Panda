@@ -1,5 +1,5 @@
 import React from "react";
-import "../Css/style.css"
+import "../Css/home.css";
 import Button from "react-bootstrap/Button";
 import { Link } from "react-router-dom";
 import timer from "../images/timer.png";
@@ -19,12 +19,11 @@ export const HomeComponent = ({sendUser}) => {
 
 
   return (
-
         <div className="homePage">
           <main className="mainsection">
-            <div className="titlehome">
-              <h3>En sida som räknar och håller koll på dina tider.</h3>
-              <h1>- Så att du slipper.</h1>              
+            <div className="main-header">
+              <h3 className="home-title">En sida som räknar och håller koll på dina tider.</h3>
+              <h1 className='home-under-title'>- Så att du slipper.</h1>              
             </div>
             <div className="section">
               {/* Card 1 */}

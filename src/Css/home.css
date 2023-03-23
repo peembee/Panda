@@ -1,0 +1,87 @@
+/* * {
+    box-sizing:border-box;
+} */
+.homePage {
+    background-color: #395B64;
+    padding-top: 50px;
+    margin: 0 auto;
+    width: 100%;
+    padding-bottom: 20px;
+}
+
+.mainsecton {
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-header {
+    border-top: 4px solid rgba(0, 0, 0, 0.194);
+    margin: 50px;
+}
+
+.home-title {
+    padding-top: 20px;
+    transition: 0.5;
+    text-align: center;
+}
+
+.home-title:hover {
+    color: rgba(44, 51, 51, 0.84);
+    transition: 0.5;
+}
+
+.home-under-title {
+    color: #E7F6F2;
+    text-align: center;
+}
+
+.section {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 20px;
+    place-items: center;
+    width: 100%;
+    padding: 20px;
+}
+
+.homePageCardColor {
+    background-color: #A5C9CA;
+    
+}
+
+#buttoncss {
+    background-color: #395B64;
+    color: #E7F6F2;
+    border-color: #2C3333;
+    box-shadow: none;
+}
+
+#buttoncss:hover {
+    background-color: #E7F6F2;
+    border-color: #2C3333;
+    box-shadow: none;
+    color: black;
+}
+
+@media screen and (max-width: 600px) {
+  .section {
+    grid-template-columns: 1fr;
+  }
+  .home-title {
+    padding-top: 13%;
+  }
+}
+
+.card{
+  transition: transform 0.3s ease-in-out;
+}
+.card:hover {
+  transform: scale(
+    1.1
+  ); /* förstorar kortet till 110% av sin ursprungliga storlek */
+   transition: transform 0.3s ease-in-out; /* skapar en mjuk övergång till förstoringsanimationen */
+   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.4);  
+ } 
