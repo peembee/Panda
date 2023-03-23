@@ -7,7 +7,6 @@ import backgroundLines from "../images/lines.png";
 
 export function NewProject({sendUser}) {
    let getId = 0; 
-   let projectIdToList = 0; 
    const [show, setShow] = useState(false);
 
    const [newProject, setNewProject] = useState({      
@@ -15,69 +14,57 @@ export function NewProject({sendUser}) {
       description: null,
       status: null
     });
-
     
     const { uniqueId } = sendUser; // save userId for adding fk_employeeId to projectList
-    const myId = uniqueId;  
+    const myId = uniqueId;      
     
-    
-    const [addProjectList, setAddProjectList] = useState({      
-      start: "2023-03-22T09:27:30.368",
-      stop: "2023-03-22T09:27:30.368",
-      fK_EmployeeId: myId,
-      fK_ProjectId: getId
-    });
-
-
-
-
-
-
-
+    const [addProjectList, setAddProjectList] = useState({}); 
 
     const [swaggerData, setSwaggerData] = useState([]);
-    const [error, setError] = useState(null);
-    const [projectId, setProjectId] = useState(0);
+    const [error, setError] = useState(null);  
 
 //--------------------------------------------------------------------------------
-
 //----- update project-id when it changes value
     useEffect(() =>{
-     
-    },[projectId])
-
-
-    //----- update fk_projektid when it changes value
-    useEffect(() =>{
-      PostToProjectList();
-    },[addProjectList])
-
-    
+      console.log("före inuti useeffect - get-id " + getId); 
+      GetProjectIdNumber();      
+       setAddProjectList({   
+       
+         start: "2023-03-22T09:27:30.368",
+         stop: "2023-03-22T09:27:30.368",
+         fK_EmployeeId: myId,
+         fK_ProjectId: getId
+       }); 
+       console.log("useeffect ny data, ", addProjectList);
+      console.log("efter inuti useeffect - get-id " + getId); 
+    },[swaggerData]) // when api-respone done - update api-data to AddprojectList-useState
+   
+//--------------------------------------------------- 
 //------- getting api for project-id
-   useEffect(() => {           
+   useEffect(() => {     
+      console.log("useeffect för hämta Project-id har startat");      
    fetch(
    "https://axb22z45ygh20230227215753.azurewebsites.net/get-all-projects"
    )
    .then((res) => res.json())
    .then(
       (result) => {                  
-         setSwaggerData(result);
-         console.log("Gett all project lyckas");
+         setSwaggerData(result);         
+         console.log("Gett all project api lyckas");
       },
       (error) => {                  
          setError(error);
          console.log("Gett all project fail");
       }
    );
-}, []);
-if (error) {
-   console.log("Error: " + {error});
-   console.log("Gett all project fail");
-}
+   if (error) {
+      console.log("Error: " + {error});
+      console.log("Gett all project fail");
+   }
+},[]);
 
 //--------------------------------------------------------------------------------
 //---- Local-functions for set the useState-variables
-
    const setName = e => {   
       setNewProject(getAllValues => ({
          ...getAllValues,
@@ -96,10 +83,8 @@ if (error) {
          status: e.target.value,
       }))
     }
-
 //--------------------------------------------------------------------------------
-//--- preventing null-values to Swagger, if null - alert User
-   
+//--- preventing null-values to Swagger, if null - alert User   
     function checkInput(){ 
       if(newProject.projectName === null || newProject.description === null || newProject.status === null || newProject.status === ""){
          alert("Vänligen fyll i alla rutor")    
@@ -112,22 +97,6 @@ if (error) {
             PostToSwagger();
          }
       }     
-   }
-
-//--------------------------------------------------------------------------------
-//----- display the upcomming projectId
-      
-   function GetProjectIdNumber(){     
-          
-      for(let i = 0; i < swaggerData.length; i++){
-         if(getId < swaggerData[i].projectId){
-            getId = swaggerData[i].projectId;
-         }
-      }
-      getId = getId + 1;
-      setProjectId(getId);
-      console.log("getId = " + getId +" . projectId = " + projectId) 
-             
    }
 
 //--------------------------------------------------------------------------------
@@ -145,19 +114,13 @@ if (error) {
                throw new Error('Network response was not ok');
             }
             else{    
-               setShow(true) // popup modal active
-               
-               GetProjectIdNumber();  
-
-               
-               
+               setShow(true) // popup modal active            
+               PostToProjectList(); // post data to projectList              
                setNewProject({  // preventing duplicate from prev value
                   projectName: "",
                   description: "",
                   status: ""
-               });  
-               
-                         
+               });                            
              }
          })
          .catch((error) => {
@@ -166,10 +129,20 @@ if (error) {
          });  
     };
 //--------------------------------------------------------------------------------
-//---- add data to projectList
-    function PostToProjectList(){
-     
+//----- display the upcomming projectId      
+function GetProjectIdNumber(){    
+   for(let i = 0; i < swaggerData.length; i++){
+      if(getId < swaggerData[i].projectId){
+         getId = swaggerData[i].projectId;
+      }
+   }
+   getId = getId + 1;         
+   console.log("från getprojectIdNumber: get-Id = " + getId)   
+}
 
+//--------------------------------------------------------------------------------
+//---- add data to projectList
+    function PostToProjectList(){    
       console.log("posta till listan, usestate: ", addProjectList)
 
       fetch("https://axb22z45ygh20230227215753.azurewebsites.net/create-projectList", {
@@ -191,10 +164,7 @@ if (error) {
          .catch((error) => {
             console.error('There was an error!', error);
             alert('Error creating ProjectList!');
-         });     
-
-
-
+         });
     }
 
 //--------------------------------------------------------------------------------
