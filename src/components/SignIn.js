@@ -34,6 +34,7 @@ useEffect(() => {
       (result) => {
         setLoaded(true);
         setSwaggerData(result);
+        console.log("swaggerdata är : ", swaggerData)
       },
       (error) => {
         setLoaded(true);
@@ -77,7 +78,7 @@ if (error) {
     } 
     else{     
         for(let i = 0; i < swaggerData.length; i++){
-          if(id === swaggerData[i].employeeId && password  === swaggerData[i].password){     
+          if(id == swaggerData[i].employeeId && password  === swaggerData[i].password){     
                 matchData = true;
                  // if ID and Password are correct, send userData to component /App          
                 setSendUser({ 
@@ -100,6 +101,7 @@ if (error) {
       setUser(sendUser);
       console.log("korrekt: nu är userdata = : ", sendUser);
     } else {
+      console.log("id= ", id + "lös: ", password)
       console.log("Fel lösen elr anv-namn");
     }
   };  
