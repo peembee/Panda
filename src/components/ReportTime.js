@@ -3,8 +3,9 @@ import { TimeLog } from "./TimeLog";
 import { AddComment } from "./AddComment";
 
 
-
 export function ReportTime() {
+  const {render} = TimeLog();
+
   return (
     <div>
         <h1>comment Component</h1>        
@@ -15,7 +16,7 @@ export function ReportTime() {
         <div>              
           ------------------------------------
           <h2>TimeLog-component</h2>
-                <TimeLog />
+                {render}
           ------------------------------------
         </div>
     </div>

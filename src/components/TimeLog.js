@@ -3,6 +3,8 @@ import React, { useState, useEffect, useRef } from "react";
 
 export function TimeLog() {
   const [time, setTime] = useState(0);
+  const [timeStart, setTimeStart] = useState(Date);
+
 
   useEffect(() => {
     return () => clearInterval(id.current);
@@ -15,7 +17,11 @@ export function TimeLog() {
       setTime((prev) => prev + 1);
     }, 1000);
   }
+  function handleDateStart(){
+    setTimeStart(new Date());
+  }
 
+//Calculations for seconds, minutes and hours
   function getSeconds() {
     return `Sekunder: ${time % 60}`;
   }
@@ -37,13 +43,17 @@ export function TimeLog() {
     marginLeft: "20px",
   };
 
-  return (
+  console.log(timeStart)
+  return {
+    //other variables here
+    render:(
     <div style={boxStyle}>
       <h1>{time}</h1>
       <p>{getSeconds()}</p>
       <p>{getMinutes()}</p>
       <p>{getHours()}</p>
-      <Button onClick={() => timeInterval()}>start WOrk</Button>
+    
+      <Button onClick={() => timeInterval() && handleDateStart}>start Work</Button>
       <Button onClick={() => clearInterval(id.current)}>Lunch Break</Button>
       <Button
         onClick={() => {
@@ -54,6 +64,6 @@ export function TimeLog() {
         End Work
       </Button>
     </div>
-  );
+  )}
 }
 
