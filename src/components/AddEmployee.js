@@ -1,6 +1,8 @@
 import React, {useState} from 'react'
 import { Form } from 'react-bootstrap';
 import '../Css/addEmployee.css';
+import addUser from '../images/addUser.png';
+
 
 export function AddEmployee() {
 
@@ -61,10 +63,13 @@ export function AddEmployee() {
 
   return (
     <div className='addEmployee'>
-      <h1 className='title'>Lägga till anställda i systemet</h1>
       <div className='content'>
+      <h1 className='title'>Lägg till personal i Panda Management</h1>
+      
+      <div className='main-container'>
+      
+      <div className='main-content'>
       <h3>Vänligen fyll i rutorna:</h3>
-
       {/* An HTML form component */}
       <form onSubmit={handleSubmit} className="form-group">
         
@@ -176,6 +181,27 @@ export function AddEmployee() {
         <button id='submit' type="submit">Lägg till anställd</button>
         
       </form>
+      </div>
+      <div className='side-content'>
+      <div className='image'>
+          <img src={addUser} className='pic' />
+        </div>
+        <div className='main-text'>
+        <p>Detta formulär kommer att lägga till en ny anställd i Panda Management.
+           <br/><br/>
+           Som ansvarig är det du som kommer att vara nogrann med att formuläret ifylles
+           med den nyanställdes personuppgifter. 
+           <br/><br/>
+           Genom att skicka in detta formulär kommer den nyanställde läggas till i Panda
+           Management-systemet, deras arbetstimmar och projekt kommer att vara synliga för 
+           chefer och adminstratörer. 
+           <br/><br/>
+           Alla fält måste ifyllas och korrekt.
+        </p>
+        </div>
+        
+      </div>
+      </div>
       </div>
     </div>
   );
