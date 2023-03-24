@@ -7,11 +7,7 @@
 
 .bodyNewProject {
     border-top: 2px solid rgba(0, 0, 0, 0.194);
-    background: linear-gradient(
-    to right,
-    rgb(80, 80, 80) 0%,
-    rgb(211, 211, 211) 100%
-  );
+    background-color: #395b64;
 }
 
 textarea {
@@ -26,7 +22,7 @@ textarea {
     margin-bottom: 20px;
     padding-left: 8px;
     font-size: 25px;
-    background-color: rgba(5, 5, 5, 0.044);
+    background-color: #a5c9cac1;
     border-radius: 10px;
     padding: 5px;
     transition: 0.4s;
@@ -41,11 +37,12 @@ textarea {
 
 .title{
     border-top: 2px solid rgba(0, 0, 0, 0.194);
-    color:rgba(0, 0, 0, 0.501);
+    color:rgba(0, 0, 0, 0.91);
     transition: 0.5s;
+    margin-left: 50px;
 }
 .title:hover{
-    color: rgba(0, 0, 0, 0.84);
+    color: rgba(0, 0, 0, 0.27);
     transition: 0.5s;
 }
 
@@ -62,34 +59,52 @@ textarea {
 .sideScreen{
     border: 2px solid rgba(100, 112, 116, 0.52);    
     padding: 20px;
-    width: 20%;
+    width: 30%;
     height: 70%;
     background: linear-gradient(to right, rgba(137, 46, 46, 0.354) 0%, rgba(16, 122, 111, 0.273) 100%);
     border-radius: 30px;
     box-shadow: 20px 20px 40px rgba(54, 93, 90, 0.153);
     position: absolute;
-    left: 70%;
+    left: 60%;
     top: 15%;    
 }
 .sideScreenText{
     text-align: center;
     font-family: bold;
-    font-size: 20px;   
+    font-size: 23px;   
     border-bottom: 2px solid rgba(0, 0, 0, 0.208);
-    color:rgba(3, 3, 3, 0.576); 
+    border-top: 2px solid rgba(0, 0, 0, 0.208);
+    color:rgba(3, 3, 3, 0.912); 
     transition: 0.5s;
 }
 .sideScreenText:hover{ 
-    color:rgb(3, 3, 3);
+    color:rgba(3, 3, 3, 0.515);
+    transition: 0.5s; 
+}
+.sideScreenResponseData{
+    color: #a5c9ca;
+    font-family: bold;
+    font-size: 25px;
+    margin-left: 5%;
+    margin-bottom: 25px;
+    transition: 0.5s; 
+}
+.sideScreenResponseData:hover{
+    background:  #04040454;
+    margin-left: 0%;
+    border-radius: 10px;
+    padding: 20px;
     transition: 0.5s; 
 }
 
 .lines{
     position: absolute;    
-    top:70%;
+    top:65%;
     width: 100%;
     height: 20%;
+    transform: rotate(0.025turn);  
 }
+
 @media screen and (max-width: 800px) {
     .section {
       grid-template-columns: 1fr;

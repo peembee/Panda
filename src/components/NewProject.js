@@ -2,7 +2,6 @@ import React from 'react'
 import Button from 'react-bootstrap/Button';
 import {Modal} from "react-bootstrap";
 import '../Css/newProject.css';
-import { Link } from "react-router-dom";
 import {useState, useEffect} from 'react'
 import backgroundLines from "../images/lines.png";
 
@@ -39,8 +38,7 @@ export function NewProject({sendUser}) {
    
 //--------------------------------------------------- 
 //------- getting api for project-id
-   useEffect(() => {     
-         console.log("useeffect för hämta Project-id har startat");      
+   useEffect(() => {        
       fetch(
       "https://axb22z45ygh20230227215753.azurewebsites.net/get-all-projects"
       )
@@ -156,7 +154,6 @@ export function NewProject({sendUser}) {
          }
       }
       projectId = projectId + 1;         
-      console.log("från getprojectIdNumber: get-Id = " + projectId)   
    }
 
 //--------------------------------------------------------------------------------
@@ -195,7 +192,7 @@ export function NewProject({sendUser}) {
                }
             } 
          }
-      }
+      }     
       return <div dangerouslySetInnerHTML={{ __html: getMyProjects }}></div>;
    }
 //-----
@@ -218,7 +215,7 @@ export function NewProject({sendUser}) {
   return (
    <>
       <div className="bodyNewProject">                  
-         <form>            
+         <form >            
                <div className="newProject">
                   <h1 className="title">Skapa ett nytt Projekt</h1>      
                   <h4 className="title">Vänligen fyll i rutorna:</h4>  
@@ -226,16 +223,16 @@ export function NewProject({sendUser}) {
                    {/* >>>>> SideScreen ------------------------------------ */}
                   <div className="sideScreen">
                       <p className="sideScreenText">Dina Pågående Aktiva projekt</p>
-                      <div>{ActiveProjects()}</div>    
+                      <div className="sideScreenResponseData">{ActiveProjects()}</div>    
                       <p className="sideScreenText">Dina Avslutade projekt</p>
-                      <div>{InActiveProjects()}</div>                   
+                      <div className="sideScreenResponseData">{InActiveProjects()}</div>                   
                   </div>
 
                   {/* >>>>> Project-Name ------------------------------------ */}
                      <div>
                         <div className="row columnPlacer">
                            <div className="col">
-                           <input name="projectName" type="text" class="form-control" placeholder="Project Name" onChange={setName} />
+                           <input name="projectName" type="text" class="form-control" placeholder="Projekt Namn" onChange={setName} />
                         </div>
                      </div>        
                   </div>
@@ -244,19 +241,19 @@ export function NewProject({sendUser}) {
                   <div>
                      <div className="row columnPlacer">
                         <div className="col">
-                           <textarea name="description" class="form-control" placeholder="Description" onChange={setDescription} rows="3" cols="50"></textarea>
+                           <textarea name="description" class="form-control" placeholder="Beskrivning" onChange={setDescription} rows="3" cols="50"></textarea>
                         </div>
                      </div>        
                   </div>
 
                   {/* >>>>> Active/Inactive ------------------------------------ */}
                   <select className="form-select columnPlacer status" aria-label="Default select example" onChange={setStatus}>
-                     <option selected>Enter Status</option>
+                     <option selected>Ange Projekt-Status</option>
                      <option>Active</option>
                      <option>Inactive</option>
                   </select>
 
-                  <Button onClick={checkInput} className="btnAutoClear">Add Project</Button>
+                  <Button onClick={checkInput} className="btnAutoClear">Skapa</Button>
                   <Button id="resetBtn" type="reset">Reset</Button>
                </div>   
                <img src={backgroundLines} className="lines" alt="lines with colors" />                                                
@@ -266,18 +263,17 @@ export function NewProject({sendUser}) {
       {/* >>>>> Modal ------------------------------------ */}
       <Modal show={show} backdrop="static">
             <Modal.Header closeButton onClick={() => setShow(false)}>
-               <Modal.Title>Project Added</Modal.Title>
+               <Modal.Title>Projekt Skapat</Modal.Title>
             </Modal.Header>
             <Modal.Body>
                <div>
-               A new Project has now been added, you can later find it in the List of Projects
+               Ett nytt Projekt har nu lagts till i projekt listan..
                </div>
             </Modal.Body>
             <Modal.Footer>
-         <Button variant="secondary" onClick={() => setShow(false)}>Close Modal</Button>
+         <Button variant="secondary" onClick={() => setShow(false)}>X</Button>
          </Modal.Footer>
       </Modal> 
    </>
   )
 }
-
