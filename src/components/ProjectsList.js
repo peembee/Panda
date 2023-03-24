@@ -46,7 +46,7 @@ export function ProjectsList() {
     return (
       <div className="bodyProjectList">
         <div className="title-container">
-          <h1>Alla projekt</h1>
+          <h1 style={{color: '#A5C9CA'}}>Alla projekt</h1>
         </div>
         <div className="table-responsive">
           <table className="table-striped">
