@@ -2,8 +2,8 @@
     padding: 100px;
     border-top: 2px solid rgba(0, 0, 0, 0.194);
     background: #395B64;
-    height: 100vh;
-    overflow-y: scroll;
+    height: 100%;
+
 }
 
 .table-striped tbody tr:nth-child(even) {
@@ -21,10 +21,12 @@ table {
 td, th {
     padding: 15px;
     line-height: 2.0;
+    
 }
 
 tbody {
     margin: 0 auto;
+    
 }
 
 .title-container {
@@ -32,6 +34,7 @@ tbody {
     text-align: center;
     margin-bottom: 20px;
     padding-top: 50px;
+    
 }
 
 h1 {
@@ -39,6 +42,7 @@ h1 {
 }
 
 th {
+    
     color: #ccc;
     text-align: center;
 }
