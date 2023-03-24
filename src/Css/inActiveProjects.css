@@ -3,6 +3,7 @@
     border-top: 2px solid rgba(0, 0, 0, 0.194);
     background: #395B64;
     height: 100vh;
+    overflow-y: scroll;
 }
 
 .table-striped tbody tr:nth-child(even) {
