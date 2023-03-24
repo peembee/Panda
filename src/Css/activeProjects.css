@@ -1,7 +1,8 @@
 .bodyActiveProjects {
     padding: 100px;
     border-top: 2px solid rgba(0, 0, 0, 0.194);
-    background: rgb(80, 80, 80);
+    background: #395B64;
+    height: 100vh;
 }
 
 .table-striped tbody tr:nth-child(even) {
