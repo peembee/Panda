@@ -2,11 +2,12 @@ import React from 'react'
 import Button from 'react-bootstrap/Button';
 import {Modal} from "react-bootstrap";
 import '../Css/newProject.css';
+import { Link } from "react-router-dom";
 import {useState, useEffect} from 'react'
 import backgroundLines from "../images/lines.png";
 
 export function NewProject({sendUser}) {
-   let getId = 0; 
+   let projectId = 0; 
    const [show, setShow] = useState(false);
 
    const [newProject, setNewProject] = useState({      
@@ -16,53 +17,69 @@ export function NewProject({sendUser}) {
     });
     
     const { uniqueId } = sendUser; // save userId for adding fk_employeeId to projectList
-    const myId = uniqueId;      
+    const myUniqueId = uniqueId;      
     
     const [addProjectList, setAddProjectList] = useState({}); 
-
+    const [projectList, setProjectList] = useState([])
     const [swaggerData, setSwaggerData] = useState([]);
     const [error, setError] = useState(null);  
 
 //--------------------------------------------------------------------------------
 //----- update project-id when it changes value
-    useEffect(() =>{
-      console.log("före inuti useeffect - get-id " + getId); 
+   useEffect(() =>{
       GetProjectIdNumber();      
-       setAddProjectList({   
-       
-         start: "2023-03-22T09:27:30.368",
-         stop: "2023-03-22T09:27:30.368",
-         fK_EmployeeId: myId,
-         fK_ProjectId: getId
-       }); 
-       console.log("useeffect ny data, ", addProjectList);
-      console.log("efter inuti useeffect - get-id " + getId); 
-    },[swaggerData]) // when api-respone done - update api-data to AddprojectList-useState
+         setAddProjectList({   
+         
+         start: new Date(),
+         stop: "2030-03-22T09:27:30.368",
+         fK_EmployeeId: myUniqueId,
+         fK_ProjectId: projectId
+         }); 
+   },[swaggerData]) // when api-respone done - update api-data to AddprojectList-useState
    
 //--------------------------------------------------- 
 //------- getting api for project-id
    useEffect(() => {     
-      console.log("useeffect för hämta Project-id har startat");      
+         console.log("useeffect för hämta Project-id har startat");      
+      fetch(
+      "https://axb22z45ygh20230227215753.azurewebsites.net/get-all-projects"
+      )
+      .then((res) => res.json())
+      .then(
+         (result) => {                  
+            setSwaggerData(result);         
+         },
+         (error) => {                  
+            setError(error);
+         }
+      );
+      if (error) {
+         console.log("Error: " + {error});
+      }
+   },[]);
+//--------------------------------------------------- 
+//------- getting api for projectList
+   useEffect(() => {        
    fetch(
-   "https://axb22z45ygh20230227215753.azurewebsites.net/get-all-projects"
+   "https://axb22z45ygh20230227215753.azurewebsites.net/get-all-projectlists"
    )
    .then((res) => res.json())
    .then(
       (result) => {                  
-         setSwaggerData(result);         
-         console.log("Gett all project api lyckas");
+         setProjectList(result);         
       },
       (error) => {                  
          setError(error);
-         console.log("Gett all project fail");
       }
    );
    if (error) {
       console.log("Error: " + {error});
-      console.log("Gett all project fail");
    }
-},[]);
-
+   },[swaggerData]);
+   //----------------
+   useEffect(() => {        
+      ActiveProjects();
+   },[projectList, addProjectList, show]);
 //--------------------------------------------------------------------------------
 //---- Local-functions for set the useState-variables
    const setName = e => {   
@@ -70,38 +87,39 @@ export function NewProject({sendUser}) {
          ...getAllValues,
          projectName: e.target.value,
       }))
-    }
-   const setDescription = e => {
-      setNewProject(getAllValues => ({
-         ...getAllValues,
-         description: e.target.value,
-      }))
-    }
-    const setStatus = e => {
-      setNewProject(getAllValues => ({
-         ...getAllValues,
-         status: e.target.value,
-      }))
-    }
+      }
+      const setDescription = e => {
+         setNewProject(getAllValues => ({
+            ...getAllValues,
+            description: e.target.value,
+         }))
+      }
+      const setStatus = e => {
+         setNewProject(getAllValues => ({
+            ...getAllValues,
+            status: e.target.value,
+         }))
+      }
 //--------------------------------------------------------------------------------
 //--- preventing null-values to Swagger, if null - alert User   
-    function checkInput(){ 
-      if(newProject.projectName === null || newProject.description === null || newProject.status === null || newProject.status === ""){
+   function checkInput(){ 
+      if(newProject.projectName === null || newProject.description === null || newProject.status === null || newProject.status === ""|| newProject.status === "Enter Status"){
          alert("Vänligen fyll i alla rutor")    
       }
       else{
          if(newProject.projectName.trim() === "" || newProject.description.trim() === ""){
-           alert("Vänligen fyll i alla rutor")           
+            alert("Vänligen fyll i alla rutor")           
          }
          else{              
             PostToSwagger();
+            
          }
       }     
    }
 
 //--------------------------------------------------------------------------------
 //---- Post projectInformation to Swagger
-    const PostToSwagger = (e) => {      // Function for post to swagger    
+   const PostToSwagger = (e) => {      // Function for post to swagger    
       fetch('https://axb22z45ygh20230227215753.azurewebsites.net/create-project', {
          method: 'POST',
          headers: {
@@ -115,59 +133,88 @@ export function NewProject({sendUser}) {
             }
             else{    
                setShow(true) // popup modal active            
-               PostToProjectList(); // post data to projectList              
+               PostToProjectList(); // post data to projectList  
                setNewProject({  // preventing duplicate from prev value
-                  projectName: "",
-                  description: "",
-                  status: ""
-               });                            
-             }
+                  projectName: null,
+                  description: null,
+                  status: null
+               });            
+               }
          })
          .catch((error) => {
             console.error('There was an error!', error);
             alert('Error creating Project!');
          });  
-    };
+   };
+
 //--------------------------------------------------------------------------------
 //----- display the upcomming projectId      
-function GetProjectIdNumber(){    
-   for(let i = 0; i < swaggerData.length; i++){
-      if(getId < swaggerData[i].projectId){
-         getId = swaggerData[i].projectId;
+   function GetProjectIdNumber(){    
+      for(let i = 0; i < swaggerData.length; i++){
+         if(projectId < swaggerData[i].projectId){
+            projectId = swaggerData[i].projectId;
+         }
       }
+      projectId = projectId + 1;         
+      console.log("från getprojectIdNumber: get-Id = " + projectId)   
    }
-   getId = getId + 1;         
-   console.log("från getprojectIdNumber: get-Id = " + getId)   
-}
 
 //--------------------------------------------------------------------------------
 //---- add data to projectList
-    function PostToProjectList(){    
-      console.log("posta till listan, usestate: ", addProjectList)
-
+   function PostToProjectList(){    
       fetch("https://axb22z45ygh20230227215753.azurewebsites.net/create-projectList", {
-         method: 'POST',
-         headers: {
-            'Content-Type': 'application/json'
-         },
-         body: JSON.stringify(addProjectList)
+      method: 'POST',
+      headers: {
+         'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(addProjectList)
+      })
+      .then((response) => {
+         if (!response.ok) {
+            console.log("Error i projectList")
+            throw new Error('Network response was not ok');               
+         }
          })
-         .then((response) => {
-            if (!response.ok) {
-               console.log("Error i projectList")
-               throw new Error('Network response was not ok');               
-            }
-            else{
-               console.log("api projectlist lyckades")            
-             }
-         })
-         .catch((error) => {
-            console.error('There was an error!', error);
-            alert('Error creating ProjectList!');
-         });
-    }
-
+      .catch((error) => {
+         console.error('There was an error!', error);
+         alert('Error creating ProjectList!');
+      });
+   }
 //--------------------------------------------------------------------------------
+//----- Data for sideScreen, getting projects-information
+   function ActiveProjects(){// sorting api to get the name for the Active project user has
+      let getMyProjects = "";
+   
+      for(let i = 0; i < projectList.length; i++){     
+         if(projectList[i].fK_EmployeeId === myUniqueId){ 
+
+            for(let j = 0; j < swaggerData.length; j++){ //                
+               if(projectList[i].fK_ProjectId === swaggerData[j].projectId && swaggerData[j].status === "Active"){
+                  getMyProjects += swaggerData[j].projectName; 
+                  getMyProjects += "<br />" 
+               }
+            } 
+         }
+      }
+      return <div dangerouslySetInnerHTML={{ __html: getMyProjects }}></div>;
+   }
+//-----
+   function InActiveProjects(){ // sorting api to get the name for the Inactive project user has
+      let inActiveProjects = "";
+      for(let i = 0; i < projectList.length; i++){     
+         if(projectList[i].fK_EmployeeId === myUniqueId){ 
+
+            for(let j = 0; j < swaggerData.length; j++){            
+               if(projectList[i].fK_ProjectId === swaggerData[j].projectId && swaggerData[j].status === "Inactive"){
+                  inActiveProjects += swaggerData[j].projectName; 
+                  inActiveProjects += "<br />" 
+               }
+            }
+         }
+      }
+      return <div dangerouslySetInnerHTML={{ __html: inActiveProjects }}></div>;
+   }
+//------------------------------------------------------------------------------------
   return (
    <>
       <div className="bodyNewProject">                  
@@ -176,8 +223,12 @@ function GetProjectIdNumber(){
                   <h1 className="title">Skapa ett nytt Projekt</h1>      
                   <h4 className="title">Vänligen fyll i rutorna:</h4>  
                   <label className="ProjectId">Skapa Projekt</label>  
+                   {/* >>>>> SideScreen ------------------------------------ */}
                   <div className="sideScreen">
-                      <p className="sideScreenText">Pågående Aktiva projekt</p>
+                      <p className="sideScreenText">Dina Pågående Aktiva projekt</p>
+                      <div>{ActiveProjects()}</div>    
+                      <p className="sideScreenText">Dina Avslutade projekt</p>
+                      <div>{InActiveProjects()}</div>                   
                   </div>
 
                   {/* >>>>> Project-Name ------------------------------------ */}
@@ -205,7 +256,7 @@ function GetProjectIdNumber(){
                      <option>Inactive</option>
                   </select>
 
-                  <Button onClick={checkInput}>Add Project</Button>
+                  <Button onClick={checkInput} className="btnAutoClear">Add Project</Button>
                   <Button id="resetBtn" type="reset">Reset</Button>
                </div>   
                <img src={backgroundLines} className="lines" alt="lines with colors" />                                                
