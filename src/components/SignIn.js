@@ -1,7 +1,8 @@
 import React from "react";
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from "react";
 import { Container } from "react-bootstrap";
 import { Navbar, Nav } from "react-bootstrap";
+import panda from "../images/cute-panda-happy3.png";
 import "../Css/style.css";
 import "../Css/signinmenu.css";
 import {
@@ -14,7 +15,7 @@ import {
   MDBInput,
 } from "mdb-react-ui-kit";
 
-export function SignInCompoment({setUser}) {
+export function SignInCompoment({ setUser }) {
   const [id, setId] = useState();
   const [password, setPassword] = useState();
   const [sendUser, setSendUser] = useState({});
@@ -22,90 +23,94 @@ export function SignInCompoment({setUser}) {
   const [swaggerData, setSwaggerData] = useState([]);
   const [error, setError] = useState(null);
   const [loaded, setLoaded] = useState(false);
-//----------------------------------
-//---- getting api
+  //----------------------------------
+  //---- getting api
 
-useEffect(() => {
-  fetch(
-    "https://axb22z45ygh20230227215753.azurewebsites.net/get-all-employees"
-  )
-    .then((res) => res.json())
-    .then(
-      (result) => {
-        setLoaded(true);
-        setSwaggerData(result);
-        console.log("swaggerdata är : ", swaggerData)
-      },
-      (error) => {
-        setLoaded(true);
-        setError(error);
-      }
-    );
-}, []);
-if (error) {
-  return console.log("Error: " + {error});
-}
+  useEffect(() => {
+    fetch(
+      "https://axb22z45ygh20230227215753.azurewebsites.net/get-all-employees"
+    )
+      .then((res) => res.json())
+      .then(
+        (result) => {
+          setLoaded(true);
+          setSwaggerData(result);
+          console.log("swaggerdata är : ", swaggerData);
+        },
+        (error) => {
+          setLoaded(true);
+          setError(error);
+        }
+      );
+  }, []);
+  if (error) {
+    return console.log("Error: " + { error });
+  }
 
-
-//----------------------------------
-//---- getting values from inputs
-  const inputFromUniqueId = (e) => {   // user enter id 
+  //----------------------------------
+  //---- getting values from inputs
+  const inputFromUniqueId = (e) => {
+    // user enter id
     setId(e.target.value);
   };
-  const inputFromPassword = (e) => {    // user enter their password
+  const inputFromPassword = (e) => {
+    // user enter their password
     setPassword(e.target.value);
   };
 
-//----------------------------------
-//---- function for checking if userId matchers their userPassword 
-  const handleSignIn = () =>{    // api - handler'
-    let matchData = false; 
-   
-    if(id === "1337" && password === "1337"){
-      matchData = true;  
-      // if ID and Password are correct, send userData to component /App       
-      setSendUser({ 
-                    ...sendUser,
-                    uniqueId: 0,
-                    firstName: "chat",
-                    lastName: "gpt",
-                    address: "Space",
-                    city: "Moon",
-                    postalCode: "null",
-                    password: "1337",
-                    role: "God"
-                  }); // object-data being saved               
-    } 
-    else{     
-        for(let i = 0; i < swaggerData.length; i++){
-          if(id == swaggerData[i].employeeId && password  === swaggerData[i].password){     
-                matchData = true;
-                 // if ID and Password are correct, send userData to component /App          
-                setSendUser({ 
-                              ...sendUser,
-                              uniqueId: swaggerData[i].employeeId,
-                              firstName: swaggerData[i].firstMidName,
-                              lastName: swaggerData[i].lastName,
-                              address: swaggerData[i].address,
-                              city: swaggerData[i].city,
-                              postalCode: swaggerData[i].postalCode,
-                              password: swaggerData[i].password,
-                              role: swaggerData[i].role
-                            }); // object-data being saved   
-            break;                   
-          }    
-        }  
-    } 
-    
+  //----------------------------------
+  //---- function for checking if userId matchers their userPassword
+  const handleSignIn = () => {
+    // api - handler'
+    let matchData = false;
+
+    if (id === "1337" && password === "1337") {
+      matchData = true;
+      // if ID and Password are correct, send userData to component /App
+      setSendUser({
+        ...sendUser,
+        uniqueId: 0,
+        firstName: "chat",
+        lastName: "gpt",
+        address: "Space",
+        city: "Moon",
+        postalCode: "null",
+        password: "1337",
+        role: "God",
+      }); // object-data being saved
+    } else {
+      for (let i = 0; i < swaggerData.length; i++) {
+        if (
+          id == swaggerData[i].employeeId &&
+          password === swaggerData[i].password
+        ) {
+          matchData = true;
+          // if ID and Password are correct, send userData to component /App
+          setSendUser({
+            ...sendUser,
+            uniqueId: swaggerData[i].employeeId,
+            firstName: swaggerData[i].firstMidName,
+            lastName: swaggerData[i].lastName,
+            address: swaggerData[i].address,
+            city: swaggerData[i].city,
+            postalCode: swaggerData[i].postalCode,
+            password: swaggerData[i].password,
+            role: swaggerData[i].role,
+          }); // object-data being saved
+          break;
+        }
+      }
+    }
+
     if (matchData === true) {
       setUser(sendUser);
       console.log("korrekt: nu är userdata = : ", sendUser);
     } else {
-      console.log("id= ", id + "lös: ", password)
+      console.log("id= ", id + "lös: ", password);
       console.log("Fel lösen elr anv-namn");
     }
-  };  
-//----------------------------------
+  };
+  //----------------------------------
   return (
     <div>
       <div>
@@ -167,13 +172,23 @@ if (error) {
                   </MDBBtn>
                   <hr className="my-4" />
                 </MDBCardBody>
+                <MDBCardBody className="d-flex flex-column align-items-center">
+                  <div className="d-flex align-items-center">
+                    <img
+                      src={panda}
+                      alt="En bild på en panda"
+                      style={{ maxWidth: "50px" }}
+                      className="me-3"
+                    />
+                    <p className="text-black-50 mb-0">
+                      © 2023 Panda Management
+                    </p>
+                  </div>
+                </MDBCardBody>
               </MDBCard>
             </MDBCol>
           </MDBRow>
         </MDBContainer>
-      </div>
-      <div className="signinfooter">
-        Panda Management
       </div>
     </div>
   );
