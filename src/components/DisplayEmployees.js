@@ -1,5 +1,4 @@
-import React from "react";
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../Css/loading.css";
 import "../Css/displayEmployees.css";
@@ -8,8 +7,7 @@ export function DisplayEmployees() {
   const [error, setError] = useState(null);
   const [loaded, setLoaded] = useState(false);
   const [swaggerData, setSwaggerData] = useState([]);
-  const [passwordVisible, setPasswordVisible] = useState(false);
-  const [currentPassword, setCurrentPassword] = useState("");
+  const [visiblePasswordId, setVisiblePasswordId] = useState(null);
 
   useEffect(() => {
     fetch(
@@ -28,15 +26,17 @@ export function DisplayEmployees() {
       );
   }, []);
 
-  const togglePasswordVisibility = (password) => {
-    setPasswordVisible(!passwordVisible);
-    setCurrentPassword(password);
+  const togglePasswordVisibility = (id) => {
+    if (visiblePasswordId === id) {
+      setVisiblePasswordId(null);
+    } else {
+      setVisiblePasswordId(id);
+    }
   };
 
   if (error) {
     return <div>Error: {error.message}</div>;
   } else if (!loaded) {
-    // loading data icon
     return (
       <>
         <h2 className="loadingTitle">Loading</h2>
@@ -76,8 +76,7 @@ export function DisplayEmployees() {
                   <td>{employee.postalCode}</td>
                   <td>{employee.city}</td>
                   <td>
-                    {passwordVisible &&
-                    employee.password === currentPassword ? (
+                    {visiblePasswordId === employee.employeeId ? (
                       <div>
                         <span>{employee.password}</span>
                         <button
@@ -85,7 +84,7 @@ export function DisplayEmployees() {
                           data-toggle="tooltip"
                           data-placement="bottom"
                           title="Klicka för att dölja lösenordet"
-                          onClick={() => setPasswordVisible(false)}
+                          onClick={() => setVisiblePasswordId(null)}
                         >
                           Dölj
                         </button>
@@ -99,7 +98,7 @@ export function DisplayEmployees() {
                           data-placement="bottom"
                           title="Klicka för att visa lösenordet"
                           onClick={() =>
-                            togglePasswordVisibility(employee.password)
+                            togglePasswordVisibility(employee.employeeId)
                           }
                         >
                           Visa
