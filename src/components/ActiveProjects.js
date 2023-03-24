@@ -44,15 +44,15 @@ export function ActiveProjects() {
     return (
       <div className="bodyActiveProjects">
         <div className="title-container">
-          <h1>Alla aktiva projekt</h1>
+          <h1 style={{color: '#A5C9CA'}}>Alla aktiva projekt</h1>
         </div>
         <div className="table-responsive">
           <table className="table-striped">
             <thead>
               <tr>
-                <th>#</th>
-                <th>Projekt namn</th>
-                <th>Beskrivning</th>
+                <th style={{color: '#A5C9CA'}}>#</th>
+                <th style={{color: '#A5C9CA'}}>Projekt namn</th>
+                <th style={{color: '#A5C9CA'}}>Beskrivning</th>
               </tr>
             </thead>
             <tbody className="table-group-divider">

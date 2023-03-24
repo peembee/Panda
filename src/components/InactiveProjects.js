@@ -51,9 +51,9 @@ export function InactiveProjects () {
           <table className="table-striped">
             <thead>
               <tr>
-                <th>#</th>
-                <th>Projekt namn</th>
-                <th>Beskrivning</th>
+                <th style={{color: '#A5C9CA'}}>#</th>
+                <th style={{color: '#A5C9CA'}}>Projekt namn</th>
+                <th style={{color: '#A5C9CA'}}>Beskrivning</th>
               </tr>
             </thead>
             <tbody className="table-group-divider">

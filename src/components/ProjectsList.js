@@ -52,10 +52,10 @@ export function ProjectsList() {
           <table className="table-striped">
             <thead>
               <tr>
-                <th>#</th>
-                <th>Projekt namn</th>
-                <th>Beskrivning</th>
-                <th>Status</th>
+                <th style={{color: '#A5C9CA'}}>#</th>
+                <th style={{color: '#A5C9CA'}}>Projekt namn</th>
+                <th style={{color: '#A5C9CA'}}>Beskrivning</th>
+                <th style={{color: '#A5C9CA'}}>Status</th>
               </tr>
             </thead>
             <tbody className="table-group-divider">
