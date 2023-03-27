@@ -1,10 +1,10 @@
 import React from 'react'
-import '../Css/reportTime.css';
 import { Form } from 'react-bootstrap';
 import { useState, useEffect } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../Css/loading.css";
 import "../Css/displayEmployees.css";
+import '../Css/reportTime.css';
 import Dropdown from 'react-bootstrap/Dropdown';
 import DropdownButton from 'react-bootstrap/DropdownButton';
 
@@ -53,7 +53,7 @@ export function AddComment() {
               projects
             </Dropdown.Toggle>
 
-            <Dropdown.Menu>
+            <Dropdown.Menu className='dropDown'>
             {swaggerData.map((swaggerData) => (
                 <Dropdown.Item key={swaggerData.projectId}>
                     {swaggerData.projectName}

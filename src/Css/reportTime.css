@@ -3,4 +3,8 @@
     width: 25%;
     background-color: gainsboro;
 }
+.dropDown{
+    overflow-y:scroll;
+    max-height: 200px;
+}
 
