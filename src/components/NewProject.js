@@ -108,7 +108,8 @@ export function NewProject({sendUser}) {
          if(newProject.projectName.trim() === "" || newProject.description.trim() === ""){
             alert("Vänligen fyll i alla rutor")           
          }
-         else{              
+         else{      
+                   
             PostToSwagger();
             
          }
@@ -211,6 +212,7 @@ export function NewProject({sendUser}) {
       }
       return <div dangerouslySetInnerHTML={{ __html: inActiveProjects }}></div>;
    }
+
 //------------------------------------------------------------------------------------
   return (
    <>
@@ -222,7 +224,7 @@ export function NewProject({sendUser}) {
                   <label className="ProjectId">Skapa Projekt</label>  
                    {/* >>>>> SideScreen ------------------------------------ */}
                   <div className="sideScreen">
-                      <p className="sideScreenText">Dina Pågående Aktiva projekt</p>
+                      <p className="sideScreenText">Dina Aktiva Projekt</p>
                       <div className="sideScreenResponseData">{ActiveProjects()}</div>    
                       <p className="sideScreenText">Dina Avslutade projekt</p>
                       <div className="sideScreenResponseData">{InActiveProjects()}</div>                   
@@ -247,14 +249,15 @@ export function NewProject({sendUser}) {
                   </div>
 
                   {/* >>>>> Active/Inactive ------------------------------------ */}
-                  <select className="form-select columnPlacer status" aria-label="Default select example" onChange={setStatus}>
+                  <select className="columnPlacer status" aria-label="Default select example" onChange={setStatus}>
                      <option selected>Ange Projekt-Status</option>
                      <option>Active</option>
                      <option>Inactive</option>
                   </select>
-
+                  <div>
                   <Button onClick={checkInput} className="btnAutoClear">Skapa</Button>
                   <Button id="resetBtn" type="reset">Reset</Button>
+                  </div>
                </div>   
                <img src={backgroundLines} className="lines" alt="lines with colors" />                                                
          </form> 
@@ -267,7 +270,7 @@ export function NewProject({sendUser}) {
             </Modal.Header>
             <Modal.Body>
                <div>
-               Ett nytt Projekt har nu lagts till i projekt listan..
+               Ett nytt Projekt har nu lagts till i projekt-listan..
                </div>
             </Modal.Body>
             <Modal.Footer>
