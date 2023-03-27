@@ -8,6 +8,8 @@ export function Information() {
     <div className="infoStyle">
       <h1 id="infoHeader">Panda Management</h1>
       <h2 className="info-h2">
+        Hej och välkommen till oss!
+        <br></br>
         Panda Management är ett företag som erbjuder tidshanteringstjänster för
         att underlätta övervakningen av anställdas arbete och projekt. Genom
         företagets plattform kan arbetsgivare ha koll på anställdas arbetstid
