@@ -20,10 +20,11 @@
 .main-header {
     border-top: 4px solid rgba(0, 0, 0, 0.194);
     margin: 50px;
+    margin-top: 30px;
 }
 
 .home-title {
-  color: #A5C9CA;
+    color: #A5C9CA;
     padding-top: 20px;
     transition: 0.5;
     text-align: center;
