@@ -4,7 +4,7 @@ import { AddComment } from "./AddComment";
 
 
 export function ReportTime() {
-  const {render} = TimeLog();
+  const {render, timeStart, timeEnd} = TimeLog();
 
   return (
     <div>

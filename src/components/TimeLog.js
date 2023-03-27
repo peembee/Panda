@@ -5,8 +5,10 @@ import React, { useState, useEffect, useRef } from "react";
 export function TimeLog() {
   const [time, setTime] = useState(0);
   const [timeStart, setTimeStart] = useState(Date);
+  const [timeEnd, setTimeEnd] = useState(Date);
 
 
+//Allt med timern att göra.
   useEffect(() => {
     return () => clearInterval(id.current);
   }, []);
@@ -18,8 +20,14 @@ export function TimeLog() {
       setTime((prev) => prev + 1);
     }, 1000);
   }
+// får start datum och slutdatum när man clickar på start och stopp
   function handleDateStart(){
+    //börjar klockan
+    timeInterval();
     setTimeStart(new Date());
+  }
+  function handleDateEnd(){
+    setTimeEnd(new Date());
   }
 
 //Calculations for seconds, minutes and hours
@@ -45,8 +53,10 @@ export function TimeLog() {
   };
 
   console.log(timeStart)
+  console.log(timeEnd)
   return {
     //other variables here
+    timeStart, timeEnd,
     render:(
     <div style={boxStyle}>
       <h1>{time}</h1>
@@ -54,12 +64,14 @@ export function TimeLog() {
       <p>{getMinutes()}</p>
       <p>{getHours()}</p>
     
-      <Button onClick={() => timeInterval() && handleDateStart}>start Work</Button>
+      <Button onClick={() => handleDateStart()}>start Work</Button>
+
       <Button onClick={() => clearInterval(id.current)}>Lunch Break</Button>
       <Button
         onClick={() => {
           clearInterval(id.current);
           setTime(0);
+          handleDateEnd();
         }}
       >
         End Work
