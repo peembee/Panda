@@ -1,6 +1,7 @@
 .navbar {
     position: fixed;
     top: 0;
+    
     width: 100%;
     background: #2C3333;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5); /* lägg till en skugga för att skilja navbaren från innehållet */
@@ -26,6 +27,11 @@
   font-size: large;
 }
 
+.navbar img {
+  position: relative;
+  top: -3px;
+  max-height: 35px;
+}
 .nav-link {
   margin-right: 30px;
 }
