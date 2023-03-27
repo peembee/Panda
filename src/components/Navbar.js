@@ -46,9 +46,9 @@ export const NavbarComponent = ({handleSignOut}) => {
         </Navbar.Toggle>
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="ms-auto">
-            <Nav.Link as={NavLink} to="/" className="navBartextContent">Home</Nav.Link>
+            <Nav.Link as={NavLink} to="/" className="navBartextContent">Tjänster</Nav.Link>
             <Nav.Link as={NavLink} to="/Information" className="navBartextContent">Information</Nav.Link>
-            <Nav.Link as={NavLink} to="/" className="navBartextSignOut" onClick={handleSignOut}>Sign Out</Nav.Link>
+            <Nav.Link as={NavLink} to="/" className="navBartextSignOut" onClick={handleSignOut}>Logga ut</Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>

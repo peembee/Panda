@@ -7,7 +7,7 @@
   }
   
   #infoHeader {
-    padding-top: 20px;
+    padding-top: 30px;
     border-top: 4px solid rgba(0, 0, 0, 0.194);
     color: #a5c9ca;
     transition: 0.5s;
@@ -33,13 +33,11 @@
     padding-left: 45px;
     padding-top: 20px;
     padding-bottom: 5px;
-    text-align: center;
   }
   
   .info-h5 {
     color: #e7f6f2;
     flex-basis: 100%;
-    text-align: center;
     margin-top: 5%;
     letter-spacing: 0.1em;
   }
