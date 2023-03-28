@@ -16,7 +16,9 @@ export function AddComment() {
   const [swaggerData, setSwaggerData] = useState([]);
   const [selectedProjectId, setSelectedProjectId] = useState(null)
 
-  useEffect(() => {
+  //-----------------------------------------------
+  //fetch all projects to display in dropdown menu
+  useEffect(() => { 
     fetch(
       "https://axb22z45ygh20230227215753.azurewebsites.net/get-all-projects"
     )
@@ -33,9 +35,11 @@ export function AddComment() {
         }
       );
   }, []);
-
-  const handleSelect=(eventkey, event)=>{
+  //-----------------------------------------------
+  //Get id from chosen dropdown menu
+  const handleSelect=(eventkey, event)=>{ 
     event.persist();
+    //Get attribute used to get id from chosen dropdown object
     const projectId = event.target.getAttribute('data-projectid')
     setSelectedProjectId(projectId)
     console.log('selected project ID: ', selectedProjectId);
@@ -55,6 +59,8 @@ export function AddComment() {
     );
   } else {
      return { 
+      //-----------------------------------------------
+      // Export project id and render component
       selectedProjectId,
       renderComment:(
         <div >
@@ -86,23 +92,3 @@ export function AddComment() {
      }
   }
 }
-
-
-// <div>
-//         <div className="title-container">
-//           <h1 className="displayTitle">Här är alla anställda i systemet</h1>
-//         </div>
-//         <div className="display-container">
-//           {swaggerData.map((swaggerData) => (
-//             <div className="display-module" key={swaggerData.employeeId}>
-//               <p>{"ID nummer: " + swaggerData.employeeId}</p>
-//               <p>{"Lösenord: " + swaggerData.password}</p>
-//               <p>{"Förnamn: " + swaggerData.firstMidName}</p>
-//               <p>{"Efternamn: " + swaggerData.lastName}</p>
-//               <p>{"Address: " + swaggerData.address}</p>
-//               <p>{"Stad: " + swaggerData.city}</p>
-//               <p>{"PostNummer: " + swaggerData.postalCode}</p>
-//             </div>
-//           ))}
-//         </div>
-//       </div>
