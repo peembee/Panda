@@ -48,7 +48,7 @@ function App() {
           <Route path="/projectsList" element={<ProjectsList />} />
           <Route path="/addComment" element={<AddComment />} />
           <Route path="/timeLog" element={<TimeLog />} />
-          <Route path="/reportTime" element={<ReportTime />} />
+          <Route path="/reportTime" element={<ReportTime sendUser={user}/>} />
           <Route path="/addEmployee" element={<AddEmployee />} />
           <Route path="/displayEmployees" element={<DisplayEmployees />} />
           <Route path="/information" element={<Information />} />
