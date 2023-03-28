@@ -5,12 +5,13 @@ import { AddComment } from "./AddComment";
 
 export function ReportTime() {
   const {render, timeStart, timeEnd} = TimeLog();
+  const {renderComment, selectedProjectId} = AddComment();
 
   return (
     <div>
         <h1>comment Component</h1>        
         <div>
-                <AddComment />
+                {renderComment}
           ------------------------------------
         </div>
         <div>              

@@ -6,7 +6,7 @@ import "../Css/loading.css";
 import "../Css/displayEmployees.css";
 import '../Css/reportTime.css';
 import Dropdown from 'react-bootstrap/Dropdown';
-import DropdownButton from 'react-bootstrap/DropdownButton';
+
 
 
 
@@ -14,6 +14,7 @@ export function AddComment() {
   const [error, setError] = useState(null);
   const [loaded, setLoaded] = useState(false);
   const [swaggerData, setSwaggerData] = useState([]);
+  const [selectedProjectId, setSelectedProjectId] = useState(null)
 
   useEffect(() => {
     fetch(
@@ -33,6 +34,13 @@ export function AddComment() {
       );
   }, []);
 
+  const handleSelect=(eventkey, event)=>{
+    event.persist();
+    const projectId = event.target.getAttribute('data-projectid')
+    setSelectedProjectId(projectId)
+    console.log('selected project ID: ', selectedProjectId);
+  }
+
   if (error) {
     return <div>Error: {error.message}</div>;
   } else if (!loaded) {
@@ -46,29 +54,36 @@ export function AddComment() {
       </>
     );
   } else {
-     return (
-    <div className='comment'>
-          <Dropdown>
-            <Dropdown.Toggle variant="success" id="dropdown-basic">
-              projects
-            </Dropdown.Toggle>
+     return { 
+      selectedProjectId,
+      renderComment:(
+        <div className='comment' >
+              <Dropdown onSelect={handleSelect}>
+                <Dropdown.Toggle variant="success" id="dropdown-basic">
+                  projects
+                </Dropdown.Toggle>
+    
+                <Dropdown.Menu className='dropDown' >
+                {swaggerData.map((swaggerData) => (
+                    <Dropdown.Item  
+                    key={swaggerData.projectId}
+                    data-projectid={swaggerData.projectId}
+                    >
+                        {swaggerData.projectName}
+                      </Dropdown.Item>
+            ))}
+                </Dropdown.Menu>
+              </Dropdown>
+              <Form>
+                  <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
+                    <Form.Label></Form.Label>
+                    <Form.Control as="textarea" rows={5} placeholder="Comment" />
+                  </Form.Group>
+              </Form>
+        </div>
+      )
 
-            <Dropdown.Menu className='dropDown'>
-            {swaggerData.map((swaggerData) => (
-                <Dropdown.Item key={swaggerData.projectId}>
-                    {swaggerData.projectName}
-                  </Dropdown.Item>
-        ))}
-            </Dropdown.Menu>
-          </Dropdown>
-          <Form>
-              <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
-                <Form.Label></Form.Label>
-                <Form.Control as="textarea" rows={5} placeholder="Comment" />
-              </Form.Group>
-          </Form>
-    </div>
-  )
+     }
   }
 }
 
