@@ -7,6 +7,9 @@ export function TimeLog() {
   const [time, setTime] = useState(0);
   const [timeStart, setTimeStart] = useState(Date);
   const [timeEnd, setTimeEnd] = useState(Date);
+  const [startWorkActive, setStartWorkActive] = useState(true);
+  const [lunchBreakActive, setLunchBreakActive] = useState(true);
+  const [endWorkActive, setEndWorkActive] = useState(true);
 
 
 //Allt med timern att göra.
@@ -26,9 +29,20 @@ export function TimeLog() {
     //börjar klockan
     timeInterval();
     setTimeStart(new Date());
+    setStartWorkActive(false);
+    setLunchBreakActive(true);
   }
   function handleDateEnd(){
     setTimeEnd(new Date());
+    setStartWorkActive(true);
+    setLunchBreakActive(false);
+    setEndWorkActive(true);
+  }
+
+  function handleLunchBreak() {
+    clearInterval(id.current);
+    setLunchBreakActive(false);
+    setStartWorkActive(true);
   }
 
 //Calculations for seconds, minutes and hours
@@ -64,15 +78,16 @@ export function TimeLog() {
       <h4>{getHours()}{getMinutes()}{getSeconds()} </h4>
 
     
-      <Button onClick={() => handleDateStart()}>start Work</Button>
+      <Button onClick={() => handleDateStart()} disabled={!startWorkActive}>start Work</Button>
 
-      <Button onClick={() => clearInterval(id.current)}>Lunch Break</Button>
+      <Button onClick={() => handleLunchBreak()} disabled={!lunchBreakActive}>Lunch Break</Button>
       <Button
         onClick={() => {
           clearInterval(id.current);
           setTime(0);
           handleDateEnd();
         }}
+        disabled={!endWorkActive}
       >
         End Work
       </Button>
