@@ -57,9 +57,9 @@ export function AddComment() {
      return { 
       selectedProjectId,
       renderComment:(
-        <div className='comment' >
+        <div >
               <Dropdown onSelect={handleSelect}>
-                <Dropdown.Toggle variant="success" id="dropdown-basic">
+                <Dropdown.Toggle id="dropdown-basic">
                   projects
                 </Dropdown.Toggle>
     

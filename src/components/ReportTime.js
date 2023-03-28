@@ -2,6 +2,7 @@ import React from 'react';
 import { TimeLog } from "./TimeLog";
 import { AddComment } from "./AddComment";
 import { Button } from 'react-bootstrap';
+import '../Css/reportTime.css'
 
 
 export function ReportTime(sendUser) {
@@ -23,7 +24,8 @@ export function ReportTime(sendUser) {
         start: timeStart,
         stop: timeEnd,
         fK_EmployeeId: myUniqueId,
-        fK_ProjectId: selectedProjectId //När man väljer på komment listan så ska den komma in hit.
+        fK_ProjectId: selectedProjectId,
+        comments: '' //När man väljer på komment listan så ska den komma in hit.
         // add more key-value pairs as needed
       })
     })
@@ -43,18 +45,16 @@ export function ReportTime(sendUser) {
   }
 
   return (
-    <div>
-        <h1>comment Component</h1>        
-        <div>
-                {renderComment}
-                <Button onClick={PostToSwagger}>Submit</Button>
-          ------------------------------------
-        </div>
-        <div>              
-          ------------------------------------
-          <h2>TimeLog-component</h2>
-                {render}
-          ------------------------------------
+    <div className='background-color'>    
+        <div className='comment'>
+          <div>{renderComment}  </div>
+            <div>
+              {render}
+              <Button onClick={PostToSwagger}>Submit</Button>
+            </div>
+                          
+                
+                
         </div>
     </div>
   )

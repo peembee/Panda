@@ -36,7 +36,7 @@ function App() {
     setShowSignIn(true);
   }
 
-  if (showSignIn) {
+  if (!showSignIn) {
     return (
       <div>
         <NavbarComponent handleSignOut={handleSignOut} />

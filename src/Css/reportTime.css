@@ -1,10 +1,23 @@
 .comment {
     padding: 20px;
-    width: 25%;
-    background-color: gainsboro;
+    width: 30%;
+    background-color: #A5C9CA;
+    display: inline-block;
+    margin-top: 10%;
+    padding-top: 46px;;
 }
 .dropDown{
     overflow-y:scroll;
     max-height: 200px;
 }
+.background-color{
+    background-color: #395B64;
+    height: 100vh;
+    text-align: center;
+}
+.display-inlineblock{
+    display: inline-block;
+}
+
+
 

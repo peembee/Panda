@@ -1,5 +1,6 @@
 import { Button } from "react-bootstrap";
 import React, { useState, useEffect, useRef } from "react";
+import '../Css/reportTime.css'
 
 
 export function TimeLog() {
@@ -32,25 +33,25 @@ export function TimeLog() {
 
 //Calculations for seconds, minutes and hours
   function getSeconds() {
-    return `Sekunder: ${time % 60}`;
+    return `${time % 60}`;
   }
 
   function getMinutes() {
     const minutes = Math.floor(time / 60);
-    return `Minuter: ${minutes % 60}`;
+    return `${minutes % 60}:`;
   }
 
   function getHours() {
     const hours = Math.floor(time / 3600);
-    return `Timmar: ${hours}`;
+    return `${hours}:`;
   }
 
-  const boxStyle = {
-    padding: "10px",
-    marginBottom: "20px",
-    marginTop: "20px",
-    marginLeft: "20px",
-  };
+  // const boxStyle = {
+  //   padding: "10px",
+  //   marginBottom: "20px",
+  //   marginTop: "20px",
+  //   marginLeft: "20px",
+  // };
 
   console.log(timeStart)
   console.log(timeEnd)
@@ -58,11 +59,10 @@ export function TimeLog() {
     //other variables here
     timeStart, timeEnd,
     render:(
-    <div style={boxStyle}>
+    <div >
       <h1>{time}</h1>
-      <p>{getSeconds()}</p>
-      <p>{getMinutes()}</p>
-      <p>{getHours()}</p>
+      <h4>{getHours()}{getMinutes()}{getSeconds()} </h4>
+
     
       <Button onClick={() => handleDateStart()}>start Work</Button>
 
