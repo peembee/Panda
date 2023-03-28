@@ -1,16 +1,16 @@
 .bodyProjectList {
   padding: 100px;
   border-top: 2px solid rgba(0, 0, 0, 0.194);
-  background: #395B64;
+  background: #395b64;
   height: 100%;
 }
 
 .table-striped tbody tr:nth-child(even) {
-  background-color: #ccc;
+  background-color: #a5c9ca;
 }
 
 .table-striped tbody tr:nth-child(odd) {
-  background-color: #a8a8a8;
+  background-color: #e7f6f2;
 }
 
 table {
@@ -25,6 +25,11 @@ th {
 
 tbody {
   margin: 0 auto;
+  text-align: center;
+}
+
+thead {
+  text-align: center;
 }
 
 .title-container {
@@ -35,10 +40,10 @@ tbody {
 }
 
 h1 {
-  color: #ccc;
+  color: #a5c9ca;
 }
 
 th {
-  color: #ccc;
+  color: #a5c9ca;
   text-align: center;
 }
