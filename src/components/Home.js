@@ -1,5 +1,3 @@
-
-
 import React from "react";
 import "../Css/home.css";
 import Button from "react-bootstrap/Button";
@@ -155,6 +153,27 @@ export const HomeComponent = ({sendUser}) => {
                     </div>
                   </div>
                 </div>
+                 {/* Card ? */}
+                <div className="card mb-3" style={{ maxWidth: "450px" }}>
+                    <div className="row g-0 homePageCardColor">
+                      <div className="col-md-4">
+                        <img src={todo} className="img-fluid rounded-start" alt="..." />
+                      </div>
+                      <div className="col-md-8">
+                        <div className="card-body">
+                          <h5 className="card-title">Kort för kommande funktion</h5>
+                          <p className="card-text">information</p>
+                          <p className="card-text">
+                          </p>
+                        </div>
+                        <div>
+                          <Link to="/">
+                            <Button id="buttoncss">Gå Till</Button>
+                          </Link>
+                        </div>
+                      </div>
+                    </div>
+                </div>
             </div>
           </main>
         </div>      
@@ -222,10 +241,10 @@ export const HomeComponent = ({sendUser}) => {
   }
   else{
     return(      
-        <div>
+        <>
           {showStuffFunctions()}
           {showAllFunctions()}
-        </div>      
+        </>    
     )
   }
 }

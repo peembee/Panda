@@ -4,8 +4,7 @@
 .homePage {
   background-color: #395B64;
   padding-top: 50px;
-  margin: 0 auto;
-  width: 100%;
+  width: 100%; 
   padding-bottom: 20px;
 }
 
@@ -26,13 +25,13 @@
 .home-title {
   color: #A5C9CA;
   padding-top: 20px;
-  transition: 0.5;
+  transition: 0.5s;
   text-align: center;
 }
 
 .home-title:hover {
   color: rgba(44, 51, 51, 0.84);
-  transition: 0.5;
+  transition: 0.5s;
 }
 
 .home-under-title {
@@ -50,8 +49,7 @@
 }
 
 .homePageCardColor {
-  background-color: #A5C9CA;
-  
+  background-color: #A5C9CA;  
 }
 
 #buttoncss {
@@ -59,6 +57,7 @@
   color: #E7F6F2;
   border-color: #2C3333;
   box-shadow: none;
+  margin-left: 40%;
 }
 
 #buttoncss:hover {
@@ -68,9 +67,20 @@
   color: black;
 }
 .split{
-border-top: 2px solid rgba(55, 47, 47, 0.335);
 background-color: #395B64;
+margin-top: -40px;
+padding-bottom: 10%;
 }
+.card{
+  transition: transform 0.3s ease-in-out;
+}
+.card:hover {
+transform: scale(
+  1.1
+); /* förstorar kortet till 110% av sin ursprungliga storlek */
+  transition: transform 0.3s ease-in-out; /* skapar en mjuk övergång till förstoringsanimationen */
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.4);  
+} 
 
 @media screen and (max-width: 600px) {
 .section {
@@ -79,18 +89,13 @@ background-color: #395B64;
 .home-title {
   padding-top: 13%;
 }
-}
-
 .card{
-transition: transform 0.3s ease-in-out;
+  width: 350px;
+ } 
+ .card:hover {
+  transform: none;    
+  } 
 }
-.card:hover {
-transform: scale(
-  1.1
-); /* förstorar kortet till 110% av sin ursprungliga storlek */
- transition: transform 0.3s ease-in-out; /* skapar en mjuk övergång till förstoringsanimationen */
- box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.4);  
-} 
 
 
 
