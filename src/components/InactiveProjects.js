@@ -45,15 +45,15 @@ export function InactiveProjects () {
     return (
       <div className="bodyInActiveProjects">
         <div className="title-container">
-          <h1 style={{color: '#A5C9CA'}}>Alla avslutade projekt</h1>
+          <h1 >Alla avslutade projekt</h1>
         </div>
         <div className="table-responsive">
           <table className="table-striped">
             <thead>
               <tr>
-                <th style={{color: '#A5C9CA'}}>#</th>
-                <th style={{color: '#A5C9CA'}}>Projekt namn</th>
-                <th style={{color: '#A5C9CA'}}>Beskrivning</th>
+                <th>#</th>
+                <th>Projekt namn</th>
+                <th>Beskrivning</th>
               </tr>
             </thead>
             <tbody className="table-group-divider">

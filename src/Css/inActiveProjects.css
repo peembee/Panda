@@ -1,43 +1,44 @@
 .bodyInActiveProjects {
     padding: 100px;
-    border-top: 2px solid rgba(0, 0, 0, 0.194);
     background: #395B64;
     height: 100%;
 }
 
-.table-striped tbody tr:nth-child(even) {
-    background-color: #ccc;
+.bodyInActiveProjects .table-striped tbody tr:nth-child(even) {
+    background-color: #A5C9CA;
 }
 
-.table-striped tbody tr:nth-child(odd) {
-    background-color: #a8a8a8;
+.bodyInActiveProjects .table-striped tbody tr:nth-child(odd) {
+    background-color: #E7F6F2;
 }
 
-table {
+.bodyInActiveProjects table {
     border-spacing: 20px;
+    width: 100%;
 }
 
-td, th {
+.bodyInActiveProjects td, th {
     padding: 15px;
     line-height: 2.0;
 }
 
-tbody {
+.bodyInActiveProjects tbody {
     margin: 0 auto;
+    text-align: center;
+    
 }
 
-.title-container {
-    border-top: 2px solid rgba(0, 0, 0, 0.194);
-    text-align: center;
-    margin-bottom: 20px;
+.bodyInActiveProjects .title-container {
+    border-top: 4px solid rgba(0, 0, 0, 0.194);
     padding-top: 50px;
-}
-
-h1 {
-    color: #ccc;
-}
-
-th {
-    color: #ccc;
     text-align: center;
+}
+
+.bodyInActiveProjects h1 {
+    color: #A5C9CA;
+}
+
+.bodyInActiveProjects th {
+    text-align: center;
+    color: #A5C9CA;
 }
