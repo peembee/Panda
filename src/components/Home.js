@@ -43,9 +43,6 @@ export const HomeComponent = ({sendUser}) => {
                         <h5 className="card-title">Skapa nytt projekt</h5>
                         <p className="card-text">Här skapar man ett nytt projekt.</p>
                         <p className="card-text">
-                          <small className="text-muted">
-                            Last updated 3 mins ago
-                          </small>
                         </p>
                       </div>
                       <div>
@@ -72,9 +69,6 @@ export const HomeComponent = ({sendUser}) => {
                         <h5 className="card-title">Aktiva projekt</h5>
                         <p className="card-text">Här ser man alla aktiva projekt.</p>
                         <p className="card-text">
-                          <small className="text-muted">
-                            Last updated 3 mins ago
-                          </small>
                         </p>
                       </div>
                       <div>
@@ -97,9 +91,6 @@ export const HomeComponent = ({sendUser}) => {
                         <h5 className="card-title">Tidigare projekt</h5>
                         <p className="card-text">Här ser man tidigare projekt.</p>
                         <p className="card-text">
-                          <small className="text-muted">
-                            Last updated 3 mins ago
-                          </small>
                         </p>
                       </div>
                       <div>
@@ -126,9 +117,6 @@ export const HomeComponent = ({sendUser}) => {
                         <h5 className="card-title">Lista med alla projekt</h5>
                         <p className="card-text">Här ser man alla projekt</p>
                         <p className="card-text">
-                          <small className="text-muted">
-                            Last updated 3 mins ago
-                          </small>
                         </p>
                       </div>
                       <div>
@@ -157,9 +145,6 @@ export const HomeComponent = ({sendUser}) => {
                           Här rapporterar man tid för projektet.
                         </p>
                         <p className="card-text">
-                          <small className="text-muted">
-                            Last updated 3 mins ago
-                          </small>
                         </p>
                       </div>
                       <div>
@@ -195,9 +180,6 @@ export const HomeComponent = ({sendUser}) => {
                             <h5 className="card-title">Lägg till personal</h5>
                             <p className="card-text">Här lägger man till personal.</p>
                             <p className="card-text">
-                              <small className="text-muted">
-                                Last updated 3 mins ago
-                              </small>
                             </p>
                           </div>
                           <div>
@@ -220,9 +202,6 @@ export const HomeComponent = ({sendUser}) => {
                             <h5 className="card-title">Översikt - Personal</h5>
                             <p className="card-text">Samtlig information över Personal</p>
                             <p className="card-text">
-                              <small className="text-muted">
-                                Last updated 3 mins ago
-                              </small>
                             </p>
                           </div>
                           <div>

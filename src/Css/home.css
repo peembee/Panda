@@ -69,6 +69,7 @@
 }
 .split{
 border-top: 2px solid rgba(55, 47, 47, 0.335);
+background-color: #395B64;
 }
 
 @media screen and (max-width: 600px) {
