@@ -38,14 +38,14 @@ export const HomeComponent = ({sendUser}) => {
                     </div>
                     <div className="col-md-8">
                       <div className="card-body">
-                        <h5 className="card-title">Skapa nytt projekt</h5>
+                        <h5 className="card-title">Skapa Nytt Projekt</h5>
                         <p className="card-text">Här skapar man ett nytt projekt.</p>
                         <p className="card-text">
                         </p>
                       </div>
                       <div>
                         <Link to="/newProject">
-                          <Button id="buttoncss">Skapa nytt projekt</Button>
+                          <Button id="buttoncss">Skapa Projekt</Button>
                         </Link>
                       </div>
                     </div>
