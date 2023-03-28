@@ -64,14 +64,14 @@ export const HomeComponent = ({sendUser}) => {
                     </div>
                     <div className="col-md-8">
                       <div className="card-body">
-                        <h5 className="card-title">Aktiva projekt</h5>
+                        <h5 className="card-title">Aktiva Projekt</h5>
                         <p className="card-text">Här ser man alla aktiva projekt.</p>
                         <p className="card-text">
                         </p>
                       </div>
                       <div>
                         <Link to="/activeProjects">
-                          <Button id="buttoncss">Aktiva projekt</Button>
+                          <Button id="buttoncss">Se Projekt</Button>
                         </Link>
                       </div>
                     </div>
@@ -86,14 +86,14 @@ export const HomeComponent = ({sendUser}) => {
                     </div>
                     <div className="col-md-8">
                       <div className="card-body">
-                        <h5 className="card-title">Tidigare projekt</h5>
+                        <h5 className="card-title">Tidigare Projekt</h5>
                         <p className="card-text">Här ser man tidigare projekt.</p>
                         <p className="card-text">
                         </p>
                       </div>
                       <div>
                         <Link to="/InactiveProjects">
-                          <Button id="buttoncss">Tidigare projekt</Button>
+                          <Button id="buttoncss">Se Projekt</Button>
                         </Link>
                       </div>
                     </div>
