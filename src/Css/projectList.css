@@ -14,12 +14,18 @@
 
 .bodyProjectList table {
   border-spacing: 20px;
+  margin: 0 auto;
+  width: 80%;
+}
+
+.bodyProjectList tbody tr {
+  border-bottom: 1px solid black;
 }
 
 .bodyProjectList td,
-th {
+.bodyProjectList th {
   padding: 15px;
-  line-height: 2;
+  line-height: 2.0;
 }
 
 .bodyProjectList tbody {
@@ -33,15 +39,19 @@ th {
 
 .bodyProjectList .title-container {
   border-top: 4px solid rgba(0, 0, 0, 0.194);
+  padding-top: 50px;
   text-align: center;
-  margin-bottom: 20px;
+  margin-bottom: 50px;
 }
 
 .bodyProjectList h1 {
-  color: #a5c9ca;
+    color: #E7F6F2;
+    font-size: 48px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
 }
 
 .bodyProjectList th {
-  color: #a5c9ca;
-  text-align: center;
+    text-align: center;
+    color: #A5C9CA;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }

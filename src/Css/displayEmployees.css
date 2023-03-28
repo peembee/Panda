@@ -3,12 +3,6 @@
   background-color: #395b64;
 }
 
-.display-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
 .bodyDisplayEmployees .table-striped tbody tr:nth-child(even) {
   background-color: #A5C9CA;
 }
@@ -19,19 +13,22 @@
 
 .bodyDisplayEmployees table {
   border-spacing: 20px;
+  margin: 0 auto;
+  width: 80%;
 }
 
 .bodyDisplayEmployees td,
-th {
+.bodyDisplayEmployees th {
   padding: 15px;
-  line-height: 2;
+  line-height: 2.0;
 }
 
 .bodyDisplayEmployees tbody tr {
   border-bottom: 1px solid black;
 }
 
-.bodyDisplayEmployees table {
+.bodyDisplayEmployees tbody {
+  text-align: center;
   margin: 0 auto;
 }
 
@@ -43,21 +40,18 @@ th {
 }
 
 .displayTitle {
-  color: #a5c9ca;
+    color: #E7F6F2;
+    font-size: 48px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+    margin-bottom: 50px;
 }
 
 .bodyDisplayEmployees th {
-  color: #a5c9ca;
-  text-align: center;
+    text-align: center;
+    color: #A5C9CA;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
-.bodyDisplayEmployees thead {
-  text-align: center;
-}
-
-.bodyDisplayEmployees tbody {
-  text-align: center;
-}
 
 .bodyDisplayEmployees .displayEmployee-btn {
   margin-left: 10px;

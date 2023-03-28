@@ -14,20 +14,23 @@
 
 .bodyInActiveProjects table {
     border-spacing: 20px;
-    width: 100%;
+    margin: 0 auto;
+    width: 80%;
+}
+
+.bodyInActiveProjects tbody tr {
+    border-bottom: 1px solid black;
 }
 
 .bodyInActiveProjects td, 
 .bodyInActiveProjects th {
     padding: 15px;
     line-height: 2.0;
-    font-size: 20px;
 }
 
 .bodyInActiveProjects tbody {
     margin: 0 auto;
     text-align: center;
-    
 }
 
 .bodyInActiveProjects .title-container {
