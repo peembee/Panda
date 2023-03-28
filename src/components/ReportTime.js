@@ -11,9 +11,10 @@ export function ReportTime(sendUser) {
   const { uniqueId } = sendUser; // save userId for adding fk_employeeId to projectList
   const myUniqueId = uniqueId;
 
+  //-----------------------------------------------
+  //Post data from comment and timelog to swagger api
   const PostToSwagger = (e) => {
     e.preventDefault();
-  
     fetch('https://axb22z45ygh20230227215753.azurewebsites.net/create-projectList', {
       method: 'POST',
       headers: {
@@ -43,7 +44,8 @@ export function ReportTime(sendUser) {
       console.error('Error:', error);
     });
   }
-
+ //-----------------------------------------------
+ //return render components and post button.
   return (
     <div className='background-color'>    
         <div className='comment'>

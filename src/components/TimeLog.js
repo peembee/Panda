@@ -46,17 +46,10 @@ export function TimeLog() {
     return `${hours}:`;
   }
 
-  // const boxStyle = {
-  //   padding: "10px",
-  //   marginBottom: "20px",
-  //   marginTop: "20px",
-  //   marginLeft: "20px",
-  // };
-
   console.log(timeStart)
   console.log(timeEnd)
   return {
-    //other variables here
+    //Exporting time when clock started and time when clock stopped and render component
     timeStart, timeEnd,
     render:(
     <div >
