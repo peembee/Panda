@@ -7,11 +7,11 @@
 }
 
 .table-striped tbody tr:nth-child(even) {
-    background-color: #ccc;
+    background-color: #a5c9ca;
 }
 
 .table-striped tbody tr:nth-child(odd) {
-    background-color: #a8a8a8;
+    background-color: #e7f6f2;
 }
 
 table {
@@ -26,8 +26,12 @@ td, th {
 
 tbody {
     margin: 0 auto;
-    
+    text-align: center;
 }
+
+thead {
+    text-align: center;
+  }
 
 .title-container {
     border-top: 2px solid rgba(0, 0, 0, 0.194);
@@ -41,8 +45,7 @@ h1 {
     color: #A5C9CA;
 }
 
-th {
-    
-    color: #ccc;
+th {  
+    color: #a5c9ca;
     text-align: center;
 }
