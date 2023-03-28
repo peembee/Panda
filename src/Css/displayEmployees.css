@@ -1,7 +1,7 @@
 .bodyDisplayEmployees {
   padding: 100px;
   border-top: 2px solid rgba(0, 0, 0, 0.194);
-  background: rgb(80, 80, 80);
+  background-color: #395b64;
 }
 
 .display-container {
@@ -11,11 +11,11 @@
 }
 
 .table-striped tbody tr:nth-child(even) {
-  background-color: #ccc;
+  background-color: #A5C9CA;
 }
 
 .table-striped tbody tr:nth-child(odd) {
-  background-color: #a8a8a8;
+  background-color: #E7F6F2;
 }
 
 table {
@@ -44,11 +44,19 @@ table {
 }
 
 .displayTitle {
-  color: #ccc;
+  color: #a5c9ca;
 }
 
 th {
-  color: #ccc;
+  color: #a5c9ca;
+  text-align: center;
+}
+
+thead {
+  text-align: center;
+}
+
+tbody {
   text-align: center;
 }
 
