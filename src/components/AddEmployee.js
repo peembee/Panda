@@ -97,6 +97,7 @@ export function AddEmployee() {
                   value={employee.role}
                   onChange={handleChange}
                   required
+                  className="select-arrow"
                 >
                   <option value="">Välj ett alternativ</option>
                   <option value="Employee">Personal</option>
@@ -199,7 +200,7 @@ export function AddEmployee() {
           </div>
           <div className="side-content">
             <div className="image">
-              <img src={addUser} className="pic" />
+              <img src={addUser} className="pic" alt="En bild på en ikon"/>
             </div>
             <div className="main-text">
               <p id="addEmployee-p">

@@ -1,3 +1,5 @@
+
+/* Main content CSS */
 * {
   box-sizing: border-box;
 }
@@ -51,8 +53,16 @@
   border-radius: 30px;
 }
 
+#addEmployee-p {
+  font-weight: bold;
+  font-size: large;
+  color: #a5c9ca;
+}
+
+
+/* Picture CSS */
 .pic {
-  position: relative;
+position: relative;
   margin-right: 20px;
   margin-top: 20px;
   float: right;
@@ -63,12 +73,7 @@
   margin-left: 320px;
 }
 
-#addEmployee-p {
-  font-weight: bold;
-  font-size: large;
-  color: #a5c9ca;
-}
-
+/* Form CSS */
 input[type="text"]:hover {
   border-color: #e7f6f2;
   box-shadow: 0 0 8px #e7f6f2;
@@ -82,6 +87,8 @@ input[type="text"]:hover {
   background-color: #a5c9ca;
 }
 
+
+/* Button CSS */
 #reset {
   margin-top: 20px;
   margin-left: 20px;
@@ -105,6 +112,48 @@ button:hover {
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.4);
 }
 
+
+/* CSS for the arrow pointing down on the dropdown menu. */
+select option:first-child {
+  color: gray;
+  display: none;
+}
+
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none'><path d='M4 6L8 10L12 6' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/></svg>")
+    no-repeat;
+  background-position: right 0.7em top 50%;
+  background-size: 1em auto;
+}
+
+select:focus {
+  outline: none;
+}
+
+select:hover {
+  cursor: pointer;
+}
+
+select option {
+  color: black;
+}
+
+.select-arrow::after {
+  content: "";
+  display: inline-block;
+  margin-left: 5px;
+  width: 0;
+  height: 0;
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-top: 4px solid black;
+}
+
+
+/* Media Queries CSS */
 @media only screen and (max-width: 768px) {
   .main-container {
     flex-direction: column-reverse;
