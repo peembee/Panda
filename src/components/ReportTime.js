@@ -5,7 +5,7 @@ import { Button } from 'react-bootstrap';
 import '../Css/reportTime.css'
 
 
-export function ReportTime(sendUser) {
+export function ReportTime({sendUser}) {
   const {render, timeStart, timeEnd} = TimeLog();
   const {renderComment, selectedProjectId} = AddComment();
   const { uniqueId } = sendUser; // save userId for adding fk_employeeId to projectList

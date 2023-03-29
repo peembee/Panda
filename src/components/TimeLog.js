@@ -1,4 +1,5 @@
 import { Button } from "react-bootstrap";
+
 import React, { useState, useEffect, useRef } from "react";
 import '../Css/reportTime.css'
 
@@ -10,6 +11,14 @@ export function TimeLog() {
   const [startWorkActive, setStartWorkActive] = useState(true);
   const [lunchBreakActive, setLunchBreakActive] = useState(true);
   const [endWorkActive, setEndWorkActive] = useState(true);
+  const [hasStarted, setHasStarted] = useState(false);
+
+  const handleClick= () =>{
+    if (!hasStarted){
+      setTimeStart(new Date());
+      setHasStarted(true)
+    }
+  }
 
 
 //Allt med timern att göra.
@@ -28,12 +37,13 @@ export function TimeLog() {
   function handleDateStart(){
     //börjar klockan
     timeInterval();
-    setTimeStart(new Date());
+
     setStartWorkActive(false);
     setLunchBreakActive(true);
   }
   function handleDateEnd(){
     setTimeEnd(new Date());
+    setHasStarted(false)
     setStartWorkActive(true);
     setLunchBreakActive(false);
     setEndWorkActive(true);
@@ -60,8 +70,8 @@ export function TimeLog() {
     return `${hours}:`;
   }
 
-  console.log(timeStart)
-  console.log(timeEnd)
+  console.log('the start time is ' + timeStart)
+  console.log('the end time is ' + timeEnd)
   return {
     //Exporting time when clock started and time when clock stopped and render component
     timeStart, timeEnd,
@@ -71,7 +81,7 @@ export function TimeLog() {
       <h4>{getHours()}{getMinutes()}{getSeconds()} </h4>
 
     
-      <Button onClick={() => handleDateStart()} disabled={!startWorkActive}>start Work</Button>
+      <Button onClick={() => {handleDateStart(); handleClick();}} disabled={!startWorkActive}>start Work</Button>
 
       <Button onClick={() => handleLunchBreak()} disabled={!lunchBreakActive}>Lunch Break</Button>
       <Button
@@ -79,6 +89,7 @@ export function TimeLog() {
           clearInterval(id.current);
           setTime(0);
           handleDateEnd();
+          handleClick();
         }}
         disabled={!endWorkActive}
       >
