@@ -104,10 +104,9 @@ export function SignInCompoment({ setUser }) {
 
     if (matchData === true) {
       setUser(sendUser);
-      console.log("korrekt: nu är userdata = : ", sendUser);
+     
     } else {
-      console.log("id= ", id + "lös: ", password);
-      console.log("Fel lösen elr anv-namn");
+      alert("Fel användarnamn eller lösenord")
     }
   };
   //----------------------------------
