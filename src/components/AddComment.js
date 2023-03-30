@@ -14,7 +14,8 @@ export function AddComment() {
   const [error, setError] = useState(null);
   const [loaded, setLoaded] = useState(false);
   const [swaggerData, setSwaggerData] = useState([]);
-  const [selectedProjectId, setSelectedProjectId] = useState(null)
+  const [selectedProjectId, setSelectedProjectId] = useState(null);
+  const [comment, setComment] = useState('');
 
   //-----------------------------------------------
   //fetch all projects to display in dropdown menu
@@ -44,6 +45,9 @@ export function AddComment() {
     setSelectedProjectId(projectId)
     console.log('selected project ID: ', selectedProjectId);
   }
+  const handleChange = (e) => {
+    setComment(e.target.value)
+  }
 
   if (error) {
     return <div>Error: {error.message}</div>;
@@ -62,6 +66,7 @@ export function AddComment() {
       //-----------------------------------------------
       // Export project id and render component
       selectedProjectId,
+      comment,
       renderComment:(
         <div >
               <Dropdown onSelect={handleSelect}>
@@ -83,7 +88,16 @@ export function AddComment() {
               <Form>
                   <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
                     <Form.Label></Form.Label>
-                    <Form.Control as="textarea" rows={5} placeholder="Comment" />
+                    <Form.Control 
+                        as="textarea" 
+                        rows={5}
+                        type="text"
+                        id="comment"
+                        name="comment"
+                        value={comment}
+                        onChange={handleChange}
+                        required
+                        className="select-arrow" />
                   </Form.Group>
               </Form>
         </div>

@@ -9,6 +9,7 @@
   margin: 0 auto;
   border-top: 2px solid rgba(0, 0, 0, 0.194);
   background-color: #395b64;
+  height: 100vh;
 }
 
 .addEmployee-title {
@@ -155,11 +156,15 @@ select option {
 
 /* Media Queries CSS */
 @media only screen and (max-width: 768px) {
+  .addEmployee{
+    height: 130vh;
+  }
   .main-container {
     flex-direction: column-reverse;
     width: 100%;
     align-items: center;
     justify-content: center;
+    
   }
 
   .addEmployee-title {

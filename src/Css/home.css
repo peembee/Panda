@@ -5,7 +5,15 @@
   background-color: #395B64;
   padding-top: 50px;
   width: 100%; 
+  
+
+}
+.homePageVip {
+  background-color: #395B64;
+  padding-top: 50px;
+  width: 100%; 
   padding-bottom: 60px;
+  height: 100vh;
 }
 
 .mainsecton {
