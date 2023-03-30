@@ -1,11 +1,10 @@
 .footerAll {
-    padding: 20px;
+    padding-top: 20%;  
+    padding-bottom: 15px;  
+    padding-left: 20px; 
     background-color: #395b64;
-    color: #a5c9ca;
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
+    color: #a5c9ca;  
+ 
   }
   
   @media (max-width: 768px) {

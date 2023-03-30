@@ -12,8 +12,7 @@ import overview from "../images/view.png";
 import todo from "../images/help.png";
 import { useState} from 'react';
 
-export const HomeComponent = ({sendUser}) => {
-  
+export const HomeComponent = ({sendUser}) => {  
   const [signedInUser, setSignedInUser] = useState({sendUser}); // userData being saved in signedInUser
   
   function showStuffFunctions(){
@@ -183,9 +182,9 @@ export const HomeComponent = ({sendUser}) => {
     // section  mainsection  homePage
   function showAllFunctions(){
     return(
-      <div className="homePageVip mainsection section split">            
+      <div className="homePageVip section">            
         {/* Card 6 */}
-        <div className="card mb-3" style={{ maxWidth: "450px" }}>
+        <div className="card mb-3 split" style={{ maxWidth: "450px" }}>
                       <div className="row g-0 homePageCardColor">
                         <div className="col-md-4">
                           <img
@@ -211,7 +210,7 @@ export const HomeComponent = ({sendUser}) => {
                     </div>
 
                     {/* Card 7 */}
-                    <div className="card mb-3" style={{ maxWidth: "450px" }}>
+                    <div className="card mb-3 split" style={{ maxWidth: "450px" }}>
                       <div className="row g-0 homePageCardColor">
                         <div className="col-md-4">
                           <img src={overview} className="img-fluid rounded-start" alt="..." />

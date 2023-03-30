@@ -5,24 +5,16 @@
   background-color: #395B64;
   padding-top: 50px;
   width: 100%; 
-  min-height: 100vh;
-
+  height: 80vh;
 }
 .homePageVip {
   background-color: #395B64;
-  padding-top: 50px;
-  width: 100%; 
-  padding-bottom: 60px;
-  height: 100vh;
-  display: inline-block;
-  height: auto;
+  width: 100%;  
 }
-.split{
-  background-color: #395B64;
-  margin-top: -40px;
-  padding-bottom: 10%;
-  margin-top: -19%;
-  }
+.split {
+ position: relative;
+ bottom: 122%  
+}
 
 .mainsecton {
   text-align: center;

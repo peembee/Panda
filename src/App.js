@@ -38,7 +38,7 @@ function App() {
 
   if (!showSignIn) {
     return (
-      <div>
+      <div className="background">
         <NavbarComponent handleSignOut={handleSignOut} />
         <Routes>
           <Route path="/" element={<HomeComponent sendUser={user} />} />
