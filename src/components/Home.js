@@ -183,7 +183,7 @@ export const HomeComponent = ({sendUser}) => {
     // section  mainsection  homePage
   function showAllFunctions(){
     return(
-      <div className="homePage mainsection section split">            
+      <div className="homePageVip mainsection section split">            
         {/* Card 6 */}
         <div className="card mb-3" style={{ maxWidth: "450px" }}>
                       <div className="row g-0 homePageCardColor">
