@@ -7,7 +7,7 @@ import '../Css/reportTime.css'
 
 export function ReportTime({sendUser}) {
   const {render, timeStart, timeEnd} = TimeLog();
-  const {renderComment, selectedProjectId} = AddComment();
+  const {renderComment, comment, selectedProjectId} = AddComment();
   const { uniqueId } = sendUser; // save userId for adding fk_employeeId to projectList
   const myUniqueId = uniqueId;
 
@@ -26,7 +26,7 @@ export function ReportTime({sendUser}) {
         stop: timeEnd,
         fK_EmployeeId: myUniqueId,
         fK_ProjectId: selectedProjectId,
-        comments: '' //När man väljer på komment listan så ska den komma in hit.
+        comments: comment //När man väljer på komment listan så ska den komma in hit.
         // add more key-value pairs as needed
       })
     })
