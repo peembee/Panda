@@ -12,6 +12,7 @@ export function AddComment() {
   const [loaded, setLoaded] = useState(false);
   const [swaggerData, setSwaggerData] = useState([]);
   const [selectedProjectId, setSelectedProjectId] = useState(null);
+  const [selectedProjectName, setSelectedProjectName] = useState('');
   const [comment, setComment] = useState("");
 
   //-----------------------------------------------
@@ -39,7 +40,9 @@ export function AddComment() {
     event.persist();
     //Get attribute used to get id from chosen dropdown object
     const projectId = event.target.getAttribute("data-projectid");
+    const displayName = event.target.getAttribute("data-projectName");
     setSelectedProjectId(projectId);
+    setSelectedProjectName(displayName)
     console.log("selected project ID: ", selectedProjectId);
   };
   const handleChange = (e) => {
@@ -67,13 +70,14 @@ export function AddComment() {
       renderComment: (
         <div>
           <Dropdown onSelect={handleSelect}>
-            <Dropdown.Toggle id="dropdown-basic">projects</Dropdown.Toggle>
+            <Dropdown.Toggle >{selectedProjectName ? selectedProjectName: 'Välj Projekt'}</Dropdown.Toggle>
 
             <Dropdown.Menu className="dropDown">
               {swaggerData.map((swaggerData) => (
                 <Dropdown.Item
                   key={swaggerData.projectId}
                   data-projectid={swaggerData.projectId}
+                  data-projectName={swaggerData.projectName}
                 >
                   {swaggerData.projectName}
                 </Dropdown.Item>
@@ -83,7 +87,7 @@ export function AddComment() {
           <Form>
             <Form.Group
               className="mb-3"
-              controlId="exampleForm.ControlTextarea1"
+              
             >
               <Form.Label></Form.Label>
               <Form.Control
