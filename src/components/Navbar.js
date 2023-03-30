@@ -34,7 +34,7 @@ export const NavbarComponent = ({ handleSignOut }) => {
     <Navbar className="navbar" display="flex" expand="md">
       <Container>
         <Navbar.Brand>
-          <img src={panda} alt="logo" />
+          <img src={panda} alt="En bild på en panda" />
           <Nav.Link as={NavLink} to="/">
             Panda
           </Nav.Link>
