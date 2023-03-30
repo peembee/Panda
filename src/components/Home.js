@@ -18,7 +18,7 @@ export const HomeComponent = ({sendUser}) => {
   function showStuffFunctions(){
     return(                       
       <>
-        <div className="homePage">
+        <div>
           <main className="mainsection">
             <div className="main-header">
               <h3 className="home-title">
@@ -190,9 +190,9 @@ export const HomeComponent = ({sendUser}) => {
     // section  mainsection  homePage
   function showAllFunctions(){
     return(
-      <div className="homePageVip section">            
+      <div className="section">            
         {/* Card 6 */}
-        <div className="card mb-3 split" style={{ maxWidth: "450px" }}>
+        <div className="card mb-3" style={{ maxWidth: "450px" }}>
                       <div className="row g-0 homePageCardColor">
                         <div className="col-md-4">
                           <img
@@ -218,7 +218,7 @@ export const HomeComponent = ({sendUser}) => {
                     </div>
 
                     {/* Card 7 */}
-                    <div className="card mb-3 split" style={{ maxWidth: "450px" }}>
+                    <div className="card mb-3" style={{ maxWidth: "450px" }}>
                       <div className="row g-0 homePageCardColor">
                         <div className="col-md-4">
                           <img src={overview} className="img-fluid rounded-start" alt="..." />
@@ -241,19 +241,16 @@ export const HomeComponent = ({sendUser}) => {
      </div> 
     )
   } 
-  if(sendUser.role === "Employee"){
-    return(
-        <div>{showStuffFunctions()}</div>
-    )
-  }
+
   if (sendUser.role === "Employee") {
     return <div>{showStuffFunctions()}</div>;
-  } else {
+  } 
+  else {
     return (
-      <>
+      <div>
         {showStuffFunctions()}
         {showAllFunctions()}
-      </>
+      </div>
     );
   }
 };
