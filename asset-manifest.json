@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/Panda/static/css/main.82ef289e.css",
+    "main.js": "/Panda/static/js/main.5b0b756b.js",
+    "static/js/787.73bbdd1f.chunk.js": "/Panda/static/js/787.73bbdd1f.chunk.js",
+    "static/media/lines.png": "/Panda/static/media/lines.166f2d45f6e14cfb9bc7.png",
+    "static/media/fa-solid-900.ttf": "/Panda/static/media/fa-solid-900.2877d54f94f30c5d563c.ttf",
+    "static/media/pandishpic.png": "/Panda/static/media/pandishpic.e78443e9bc4b06fbc1be.png",
+    "static/media/fa-brands-400.ttf": "/Panda/static/media/fa-brands-400.13e40630e5866f777de8.ttf",
+    "static/media/fa-solid-900.woff2": "/Panda/static/media/fa-solid-900.bdb9e23299f9d1320a8b.woff2",
+    "static/media/fa-brands-400.woff2": "/Panda/static/media/fa-brands-400.7be2266f1be21c44ecd4.woff2",
+    "static/media/fa-regular-400.ttf": "/Panda/static/media/fa-regular-400.146404900f7550a9719d.ttf",
+    "static/media/fa-regular-400.woff2": "/Panda/static/media/fa-regular-400.8bedd7cfa43a6c358cdd.woff2",
+    "static/media/file.png": "/Panda/static/media/file.a66837beec861a98d993.png",
+    "static/media/fa-v4compatibility.ttf": "/Panda/static/media/fa-v4compatibility.6c0a7b774ffa1cf0a059.ttf",
+    "static/media/fa-v4compatibility.woff2": "/Panda/static/media/fa-v4compatibility.497d535001197a9c5b38.woff2",
+    "index.html": "/Panda/index.html",
+    "main.82ef289e.css.map": "/Panda/static/css/main.82ef289e.css.map",
+    "main.5b0b756b.js.map": "/Panda/static/js/main.5b0b756b.js.map",
+    "787.73bbdd1f.chunk.js.map": "/Panda/static/js/787.73bbdd1f.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.82ef289e.css",
+    "static/js/main.5b0b756b.js"
+  ]
+}
