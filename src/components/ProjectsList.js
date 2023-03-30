@@ -2,7 +2,8 @@ import React from "react";
 import { useState, useEffect } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../Css/loading.css";
-import "../Css/projectList.css";
+// import "../Css/projectList.css";
+import "../Css/table.css";
 
 export function ProjectsList() {
   const [error, setError] = useState(null);
@@ -44,18 +45,18 @@ export function ProjectsList() {
     );
 
     return (
-      <div className="bodyProjectList">
+      <div className="bodyTable">
         <div className="title-container">
-          <h1 style={{color: '#A5C9CA'}}>Alla projekt</h1>
+          <h1 className="displayTitle">Alla projekt</h1>
         </div>
         <div className="table-responsive">
           <table className="table-striped">
             <thead>
               <tr>
-                <th style={{color: '#A5C9CA'}}>#</th>
-                <th style={{color: '#A5C9CA'}}>Projekt namn</th>
-                <th style={{color: '#A5C9CA'}}>Beskrivning</th>
-                <th style={{color: '#A5C9CA'}}>Status</th>
+                <th>#</th>
+                <th>Projekt namn</th>
+                <th>Beskrivning</th>
+                <th>Status</th>
               </tr>
             </thead>
             <tbody className="table-group-divider">

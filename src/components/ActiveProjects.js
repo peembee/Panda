@@ -2,7 +2,8 @@ import React from "react";
 import { useState, useEffect } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../Css/loading.css";
-import "../Css/activeProjects.css";
+// import "../Css/activeProjects.css";
+import "../Css/table.css";
 
 export function ActiveProjects() {
   const [error, setError] = useState(null);
@@ -42,17 +43,17 @@ export function ActiveProjects() {
     const activeProjects = SwaggerData.filter(project => project.status === 'Active');
 
     return (
-      <div className="bodyActiveProjects">
+      <div className="bodyTable">
         <div className="title-container">
-          <h1 style={{color: '#A5C9CA'}}>Alla aktiva projekt</h1>
+          <h1 className="displayTitle">Alla aktiva projekt</h1>
         </div>
         <div className="table-responsive">
           <table className="table-striped">
             <thead>
               <tr>
-                <th style={{color: '#A5C9CA'}}>#</th>
-                <th style={{color: '#A5C9CA'}}>Projekt namn</th>
-                <th style={{color: '#A5C9CA'}}>Beskrivning</th>
+                <th>#</th>
+                <th>Projekt namn</th>
+                <th>Beskrivning</th>
               </tr>
             </thead>
             <tbody className="table-group-divider">

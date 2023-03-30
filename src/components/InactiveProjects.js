@@ -2,7 +2,8 @@ import React from "react";
 import { useState, useEffect } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../Css/loading.css";
-import "../Css/inActiveProjects.css";
+// import "../Css/inActiveProjects.css";
+import "../Css/table.css";
 
 
 export function InactiveProjects () {
@@ -43,9 +44,9 @@ export function InactiveProjects () {
     const inActiveProjects = SwaggerData.filter(project => project.status === 'Inactive');
 
     return (
-      <div className="bodyInActiveProjects">
+      <div className="bodyTable">
         <div className="title-container">
-          <h1 >Alla avslutade projekt</h1>
+          <h1 className="displayTitle">Alla avslutade projekt</h1>
         </div>
         <div className="table-responsive">
           <table className="table-striped">
