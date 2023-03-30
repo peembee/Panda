@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../Css/loading.css";
 import "../Css/displayEmployees.css";
+import "../Css/table.css";
 
 export function DisplayEmployees() {
   const [error, setError] = useState(null);
@@ -47,7 +48,7 @@ export function DisplayEmployees() {
     );
   } else {
     return (
-      <div className="bodyDisplayEmployees">
+      <div className="bodyTable">
         <div className="title-container">
           <h1 className="displayTitle">Anställda i systemet</h1>
         </div>

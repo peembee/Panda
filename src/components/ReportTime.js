@@ -15,8 +15,8 @@ export function ReportTime(sendUser) {
   //Post data from comment and timelog to swagger api
   const PostToSwagger = (e) => {
     e.preventDefault();
-    fetch('https://axb22z45ygh20230227215753.azurewebsites.net/create-projectList', {
-      method: 'POST',
+    fetch('https://axb22z45ygh20230227215753.azurewebsites.net/update-projectList', {
+      method: 'PUT',
       headers: {
         'Content-Type': 'application/json'
       },
