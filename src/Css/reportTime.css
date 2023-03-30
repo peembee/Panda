@@ -1,23 +1,20 @@
 .comment {
-    padding: 20px;
-    width: 30%;
-    background-color: #A5C9CA;
-    display: inline-block;
-    margin-top: 10%;
-    padding-top: 46px;;
+  padding: 20px;
+  width: 30%;
+  background-color: #a5c9ca;
+  display: inline-block;
+  margin-top: 10%;
+  padding-top: 46px;
 }
-.dropDown{
-    overflow-y:scroll;
-    max-height: 200px;
+.dropDown {
+  overflow-y: scroll;
+  max-height: 200px;
 }
-.background-color{
-    background-color: #395B64;
-    height: 100vh;
-    text-align: center;
+.background-color {
+  background-color: #395b64;
+  height: 100vh;
+  text-align: center;
 }
-.display-inlineblock{
-    display: inline-block;
+.display-inlineblock {
+  display: inline-block;
 }
-
-
-

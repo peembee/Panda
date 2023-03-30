@@ -11,20 +11,21 @@ export function ActiveProjects() {
   const [SwaggerData, setSwaggerData] = useState([]);
 
   useEffect(() => {
-    fetch('https://axb22z45ygh20230227215753.azurewebsites.net/get-all-projects')
-
-    .then((response) => response.json())
-    .then(
-      (result) => {
-        setLoaded(true);
-        setSwaggerData(result);
-        console.log(result);
-      },
-      (error) => {
-        setLoaded(true);
-        setError(error);
-      }
-    );
+    fetch(
+      "https://axb22z45ygh20230227215753.azurewebsites.net/get-all-projects"
+    )
+      .then((response) => response.json())
+      .then(
+        (result) => {
+          setLoaded(true);
+          setSwaggerData(result);
+          console.log(result);
+        },
+        (error) => {
+          setLoaded(true);
+          setError(error);
+        }
+      );
   }, []);
 
   if (error) {
@@ -32,15 +33,16 @@ export function ActiveProjects() {
   } else if (!loaded) {
     return (
       <div>
-          <h2 className="loadingTitle">Loading</h2>
-          <div className="spinner-border text-danger loadingIcon" role="status">
+        <h2 className="loadingTitle">Loading</h2>
+        <div className="spinner-border text-danger loadingIcon" role="status">
           <span className="visually-hidden">Loading...</span>
         </div>
       </div>
     );
   } else {
-
-    const activeProjects = SwaggerData.filter(project => project.status === 'Active');
+    const activeProjects = SwaggerData.filter(
+      (project) => project.status === "Active"
+    );
 
     return (
       <div className="bodyTable">
@@ -69,6 +71,6 @@ export function ActiveProjects() {
           </table>
         </div>
       </div>
-    )
+    );
   }
 }

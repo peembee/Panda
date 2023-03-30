@@ -6,11 +6,3 @@
     width: 40%;   
     box-shadow: 10px 10px 10px black;
 }
-.loadingTitle{
-    padding: 30px;
-    margin-top: 50px;
-    border-top: 2px solid rgba(0, 0, 0, 0.194);
-    color:rgba(0, 0, 0, 0.501);
-    transition: 0.5s;
-    text-align: center;
-}

@@ -1,0 +1,26 @@
+get https://axb22z45ygh20230227215753.azurewebsites.net/get-all-employees
+
+### 
+
+# post https://axb22z45ygh20230227215753.azurewebsites.net/create-employee
+# Content-Type: application/json
+
+# {
+#     "employeeId": 0,
+#     "firstMidName": "Erik",
+#     "lastName": "Engvall", 
+#     "address": "Asbergshimlen",
+#     "city": "Soderhamn",
+#     "postalCode": "123123"   
+# }
+
+###
+
+#
+DELETE https://axb22z45ygh20230227215753.azurewebsites.net/delete-employee-by-id/19
+
+###
+
+#get https://axb22z45ygh20230227215753.azurewebsites.net/get-employee-by-id/10
+
+###
