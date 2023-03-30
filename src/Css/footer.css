@@ -2,9 +2,11 @@
     padding: 20px;
     background-color: #395b64;
     color: #a5c9ca;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
   }
-  
-  
   
   @media (max-width: 768px) {
     .footerAll {
