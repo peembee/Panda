@@ -208,8 +208,8 @@ export function AddEmployee() {
                 Management.
                 <br />
                 <br />
-                Som ansvarig är det du som kommer att vara nogrann med att
-                formuläret ifylles med den nyanställdes personuppgifter.
+                Som ansvarig gäller det att vara nogrann med att
+                formuläret ifylles korrekt med den nyanställdes personuppgifter.
                 <br />
                 <br />
                 Genom att skicka in detta formulär kommer den nyanställde läggas
@@ -217,7 +217,7 @@ export function AddEmployee() {
                 kommer att vara synliga för chefer och adminstratörer.
                 <br />
                 <br />
-                Alla fält måste ifyllas och korrekt.
+                Alla fält måste ifyllas korrekt.
               </p>
             </div>
           </div>
