@@ -1,15 +1,12 @@
 .footerAll {
-    padding: 20px;
-    background-color: #395b64;
-    color: #a5c9ca;
+  padding: 20px;
+  background-color: #395b64;
+  color: #a5c9ca;
+}
+
+@media (max-width: 768px) {
+  .footerAll {
+    height: 50px;
+    font-size: 12px;
   }
-  
-  
-  
-  @media (max-width: 768px) {
-    .footerAll {
-      height: 50px;
-      font-size: 12px;
-    }
-  }
-  
+}

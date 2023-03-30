@@ -1,29 +1,29 @@
 .navbar {
-    position: fixed;
-    top: 0;
-    
-    width: 100%;
-    background: #2C3333;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5); /* lägg till en skugga för att skilja navbaren från innehållet */
-    z-index: 999;
+  position: fixed;
+  top: 0;
+
+  width: 100%;
+  background: #2c3333;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5); /* lägg till en skugga för att skilja navbaren från innehållet */
+  z-index: 999;
 }
-  
+
 .navbar ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
 }
-  
+
 .navbar li {
-    margin: 0 10px;
-    font-family: Arial, Helvetica, sans-serif I !important;
+  margin: 0 10px;
+  font-family: Arial, Helvetica, sans-serif I !important;
 }
 
 .navbar .nav-link {
   font-family: var(--bs-body-font-family) !important;
   font-weight: 600;
-  color: #A5C9CA !important;
+  color: #a5c9ca !important;
   font-size: large;
 }
 
@@ -37,25 +37,24 @@
 }
 
 .dropdownIconBox {
-  color: #A5C9CA !important;
+  color: #a5c9ca !important;
 }
-  
-.dropdownIconBox{
+
+.dropdownIconBox {
   background-color: rgba(0, 0, 0, 0);
   border: 0px;
 }
-.navBartextContent{
+.navBartextContent {
   transition: 0.5s;
- } 
-.navBartextContent:hover{
-  color: #E7F6F2 !important;
- } 
-.navBartextContent.active{ 
-  color: #395B64 !important;
+}
+.navBartextContent:hover {
+  color: #e7f6f2 !important;
+}
+.navBartextContent.active {
+  color: #395b64 !important;
   transition: 0.5s;
 }
 
 .navBartextSignOut:hover {
-  color: #E7F6F2 !important;
+  color: #e7f6f2 !important;
 }
-

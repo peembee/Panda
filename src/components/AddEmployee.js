@@ -200,7 +200,7 @@ export function AddEmployee() {
           </div>
           <div className="side-content">
             <div className="image">
-              <img src={addUser} className="pic" alt="En bild på en ikon"/>
+              <img src={addUser} className="pic" alt="En bild på en ikon" />
             </div>
             <div className="main-text">
               <p id="addEmployee-p">

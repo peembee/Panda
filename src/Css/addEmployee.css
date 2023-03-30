@@ -1,4 +1,3 @@
-
 /* Main content CSS */
 * {
   box-sizing: border-box;
@@ -60,10 +59,9 @@
   color: #a5c9ca;
 }
 
-
 /* Picture CSS */
 .pic {
-position: relative;
+  position: relative;
   margin-right: 20px;
   margin-top: 20px;
   float: right;
@@ -88,7 +86,6 @@ input[type="text"]:hover {
   background-color: #a5c9ca;
 }
 
-
 /* Button CSS */
 #reset {
   margin-top: 20px;
@@ -112,7 +109,6 @@ button:hover {
   transition: transform 0.3s ease-in-out; /* skapar en mjuk övergång till förstoringsanimationen */
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.4);
 }
-
 
 /* CSS for the arrow pointing down on the dropdown menu. */
 select option:first-child {
@@ -153,10 +149,9 @@ select option {
   border-top: 4px solid black;
 }
 
-
 /* Media Queries CSS */
 @media only screen and (max-width: 768px) {
-  .addEmployee{
+  .addEmployee {
     height: 130vh;
   }
   .main-container {
@@ -164,7 +159,6 @@ select option {
     width: 100%;
     align-items: center;
     justify-content: center;
-    
   }
 
   .addEmployee-title {

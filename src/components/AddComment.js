@@ -1,25 +1,22 @@
-import React from 'react'
-import { Form } from 'react-bootstrap';
+import React from "react";
+import { Form } from "react-bootstrap";
 import { useState, useEffect } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../Css/loading.css";
 import "../Css/displayEmployees.css";
-import '../Css/reportTime.css';
-import Dropdown from 'react-bootstrap/Dropdown';
-
-
-
+import "../Css/reportTime.css";
+import Dropdown from "react-bootstrap/Dropdown";
 
 export function AddComment() {
   const [error, setError] = useState(null);
   const [loaded, setLoaded] = useState(false);
   const [swaggerData, setSwaggerData] = useState([]);
   const [selectedProjectId, setSelectedProjectId] = useState(null);
-  const [comment, setComment] = useState('');
+  const [comment, setComment] = useState("");
 
   //-----------------------------------------------
   //fetch all projects to display in dropdown menu
-  useEffect(() => { 
+  useEffect(() => {
     fetch(
       "https://axb22z45ygh20230227215753.azurewebsites.net/get-all-projects"
     )
@@ -38,16 +35,16 @@ export function AddComment() {
   }, []);
   //-----------------------------------------------
   //Get id from chosen dropdown menu
-  const handleSelect=(eventkey, event)=>{ 
+  const handleSelect = (eventkey, event) => {
     event.persist();
     //Get attribute used to get id from chosen dropdown object
-    const projectId = event.target.getAttribute('data-projectid')
-    setSelectedProjectId(projectId)
-    console.log('selected project ID: ', selectedProjectId);
-  }
+    const projectId = event.target.getAttribute("data-projectid");
+    setSelectedProjectId(projectId);
+    console.log("selected project ID: ", selectedProjectId);
+  };
   const handleChange = (e) => {
-    setComment(e.target.value)
-  }
+    setComment(e.target.value);
+  };
 
   if (error) {
     return <div>Error: {error.message}</div>;
@@ -62,47 +59,48 @@ export function AddComment() {
       </>
     );
   } else {
-     return { 
+    return {
       //-----------------------------------------------
       // Export project id and render component
       selectedProjectId,
       comment,
-      renderComment:(
-        <div >
-              <Dropdown onSelect={handleSelect}>
-                <Dropdown.Toggle id="dropdown-basic">
-                  projects
-                </Dropdown.Toggle>
-    
-                <Dropdown.Menu className='dropDown' >
-                {swaggerData.map((swaggerData) => (
-                    <Dropdown.Item  
-                    key={swaggerData.projectId}
-                    data-projectid={swaggerData.projectId}
-                    >
-                        {swaggerData.projectName}
-                      </Dropdown.Item>
-            ))}
-                </Dropdown.Menu>
-              </Dropdown>
-              <Form>
-                  <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
-                    <Form.Label></Form.Label>
-                    <Form.Control 
-                        as="textarea" 
-                        rows={5}
-                        type="text"
-                        id="comment"
-                        name="comment"
-                        value={comment}
-                        onChange={handleChange}
-                        required
-                        className="select-arrow" />
-                  </Form.Group>
-              </Form>
-        </div>
-      )
+      renderComment: (
+        <div>
+          <Dropdown onSelect={handleSelect}>
+            <Dropdown.Toggle id="dropdown-basic">projects</Dropdown.Toggle>
 
-     }
+            <Dropdown.Menu className="dropDown">
+              {swaggerData.map((swaggerData) => (
+                <Dropdown.Item
+                  key={swaggerData.projectId}
+                  data-projectid={swaggerData.projectId}
+                >
+                  {swaggerData.projectName}
+                </Dropdown.Item>
+              ))}
+            </Dropdown.Menu>
+          </Dropdown>
+          <Form>
+            <Form.Group
+              className="mb-3"
+              controlId="exampleForm.ControlTextarea1"
+            >
+              <Form.Label></Form.Label>
+              <Form.Control
+                as="textarea"
+                rows={5}
+                type="text"
+                id="comment"
+                name="comment"
+                value={comment}
+                onChange={handleChange}
+                required
+                className="select-arrow"
+              />
+            </Form.Group>
+          </Form>
+        </div>
+      ),
+    };
   }
 }

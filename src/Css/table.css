@@ -1,58 +1,57 @@
 .bodyTable {
-    padding: 100px;
-    background: #395b64;
-    height: 100%;
+  padding: 100px;
+  background: #395b64;
+  height: 100%;
 }
-  
+
 .table-striped tbody tr:nth-child(even) {
-    background-color: #a5c9ca;
+  background-color: #a5c9ca;
 }
-  
+
 .table-striped tbody tr:nth-child(odd) {
-    background-color: #e7f6f2;
+  background-color: #e7f6f2;
 }
-  
+
 table {
-    border-spacing: 20px;
-    margin: 0 auto;
-    width: 80%;
+  border-spacing: 20px;
+  margin: 0 auto;
+  width: 80%;
 }
-  
+
 tbody tr {
-    border-bottom: 1px solid black;
-  }
-  
+  border-bottom: 1px solid black;
+}
+
 td,
 th {
   padding: 15px;
-  line-height: 2.0;
+  line-height: 2;
 }
-  
+
 tbody {
- margin: 0 auto;
-text-align: center;
+  margin: 0 auto;
+  text-align: center;
 }
-  
+
 thead {
-text-align: center;
+  text-align: center;
 }
-  
-   .title-container {
-    border-top: 4px solid rgba(0, 0, 0, 0.194);
-    padding-top: 50px;
-    text-align: center;
-    margin-bottom: 50px;
-  }
-  
+
+.title-container {
+  border-top: 4px solid rgba(0, 0, 0, 0.194);
+  padding-top: 50px;
+  text-align: center;
+  margin-bottom: 50px;
+}
+
 .displayTitle {
-      color: #E7F6F2;
-      font-size: 48px;
-      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
-  }
-  
- th {
-      text-align: center;
-      color: #A5C9CA;
-      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-  }
-  
+  color: #e7f6f2;
+  font-size: 48px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+th {
+  text-align: center;
+  color: #a5c9ca;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}

@@ -5,27 +5,27 @@ import "../Css/loading.css";
 // import "../Css/inActiveProjects.css";
 import "../Css/table.css";
 
-
-export function InactiveProjects () {
+export function InactiveProjects() {
   const [error, setError] = useState(null);
   const [loaded, setLoaded] = useState(false);
   const [SwaggerData, setSwaggerData] = useState([]);
 
   useEffect(() => {
-    fetch('https://axb22z45ygh20230227215753.azurewebsites.net/get-all-projects')
-
-    .then((response) => response.json())
-    .then(
-      (result) => {
-        setLoaded(true);
-        setSwaggerData(result);
-        console.log(result);
-      },
-      (error) => {
-        setLoaded(true);
-        setError(error);
-      }
-    );
+    fetch(
+      "https://axb22z45ygh20230227215753.azurewebsites.net/get-all-projects"
+    )
+      .then((response) => response.json())
+      .then(
+        (result) => {
+          setLoaded(true);
+          setSwaggerData(result);
+          console.log(result);
+        },
+        (error) => {
+          setLoaded(true);
+          setError(error);
+        }
+      );
   }, []);
 
   if (error) {
@@ -33,15 +33,16 @@ export function InactiveProjects () {
   } else if (!loaded) {
     return (
       <div>
-          <h2 className="loadingTitle">Loading</h2>
-          <div className="spinner-border text-danger loadingIcon" role="status">
+        <h2 className="loadingTitle">Loading</h2>
+        <div className="spinner-border text-danger loadingIcon" role="status">
           <span className="visually-hidden">Loading...</span>
         </div>
       </div>
     );
   } else {
-
-    const inActiveProjects = SwaggerData.filter(project => project.status === 'Inactive');
+    const inActiveProjects = SwaggerData.filter(
+      (project) => project.status === "Inactive"
+    );
 
     return (
       <div className="bodyTable">
@@ -70,6 +71,6 @@ export function InactiveProjects () {
           </table>
         </div>
       </div>
-    )
+    );
   }
 }
