@@ -54,7 +54,7 @@ export function ReportTime({ sendUser }) {
         <div>{renderComment} </div>
         <div>
           {render}
-          <Button onClick={PostToSwagger}>Submit</Button>
+          <Button onClick={PostToSwagger}>Skicka in</Button>
         </div>
       </div>
     </div>
