@@ -19,7 +19,14 @@ export const NavbarComponent = ({ handleSignOut }) => {
       } else {
         navbar.classList.remove("fixed-top");
       }
+
+      // Ta bort "fixed-top" klassen när användaren är högst upp på sidan
+      if (window.pageYOffset === 0) {
+      navbar.classList.remove("fixed-top");
+      }
     }
+
+    
 
     // Lyssna på window-objektets scroll-händelse och kalla på funktionen toggleNavbarClass()
     window.addEventListener("scroll", toggleNavbarClass);
