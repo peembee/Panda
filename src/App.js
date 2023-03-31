@@ -41,7 +41,8 @@ function App() {
       <div className="background">
         <NavbarComponent handleSignOut={handleSignOut} />
         <Routes>
-          <Route path="/" element={<HomeComponent sendUser={user} />} />
+        <Route path="/" element={<HomeComponent sendUser={user} />} />
+          <Route path="/Panda" element={<HomeComponent sendUser={user} />} />
           <Route path="/newProject" element={<NewProject sendUser={user} />} />
           <Route path="/activeProjects" element={<ActiveProjects />} />
           <Route path="/inactiveProjects" element={<InactiveProjects />} />
