@@ -1,4 +1,4 @@
-.navbar {
+#nav {
   position: fixed;
   top: 0;
   width: 100%;
@@ -7,26 +7,26 @@
   z-index: 999;
 }
 
-.navbar ul {
+#nav ul {
   list-style: none;
   margin: 0;
   padding: 0;
   display: flex;
 }
 
-.navbar li {
+#nav li {
   margin: 0 10px;
-  font-family: Arial, Helvetica, sans-serif I !important;
+  font-family: Arial, Helvetica, sans-serif I;
 }
 
-.navbar .nav-link {
-  font-family: var(--bs-body-font-family) !important;
+#nav .nav-link {
+  font-family: var(--bs-body-font-family);
   font-weight: 600;
-  color: #a5c9ca !important;
+  color: #a5c9ca;
   font-size: large;
 }
 
-.navbar img {
+#nav img {
   position: relative;
   top: -3px;
   max-height: 35px;
@@ -35,8 +35,8 @@
   margin-right: 30px;
 }
 
-.dropdownIconBox {
-  color: #a5c9ca !important;
+#nav .dropdownIconBox {
+  color: #a5c9ca;
 }
 
 .dropdownIconBox {
@@ -46,16 +46,16 @@
 .navBartextContent {
   transition: 0.5s;
 }
-.navBartextContent:hover {
-  color: #e7f6f2 !important;
+#nav .navBartextContent:hover {
+  color: #e7f6f2;
 }
-.navBartextContent.active {
-  color: #395b64 !important;
+#nav .navBartextContent.active {
+  color: #395b64;
   transition: 0.5s;
 }
 
-.navBartextSignOut:hover {
-  color: #e7f6f2 !important;
+#nav .navBartextSignOut:hover {
+  color: #e7f6f2;
 }
 
 .fixed-top-transition {

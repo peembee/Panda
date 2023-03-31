@@ -90,7 +90,7 @@ export function TimeLog() {
           }}
           disabled={!startWorkActive}
         >
-          Start arbete
+          Starta arbete
         </Button>
 
         <Button onClick={() => handleLunchBreak()} disabled={!lunchBreakActive}>

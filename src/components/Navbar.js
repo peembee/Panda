@@ -38,7 +38,7 @@ export const NavbarComponent = ({ handleSignOut }) => {
   }, []);
 
   return (
-    <Navbar className="navbar" display="flex" expand="md">
+    <Navbar id="nav" display="flex" expand="md">
       <Container>
         <Navbar.Brand>
           <img src={panda} alt="En bild på en panda" />
