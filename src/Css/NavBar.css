@@ -1,7 +1,6 @@
 .navbar {
   position: fixed;
   top: 0;
-
   width: 100%;
   background: #2c3333;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5); /* lägg till en skugga för att skilja navbaren från innehållet */
@@ -57,4 +56,21 @@
 
 .navBartextSignOut:hover {
   color: #e7f6f2 !important;
+}
+
+
+
+
+
+
+.fixed-top-transition {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  transition: all 0.3s ease-in-out;
+}
+
+.fixed-top-transition + .content {
+  margin-top: 70px; /* adjust to the height of your fixed navbar */
 }

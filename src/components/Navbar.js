@@ -15,9 +15,9 @@ export const NavbarComponent = ({ handleSignOut }) => {
     // Funktion som lägger till eller tar bort en CSS-klass på navbaren baserat på användarens scrollposition
     function toggleNavbarClass() {
       if (window.pageYOffset >= offset) {
-        navbar.classList.add("fixed-top");
+        navbar.classList.add("fixed-top-transition");
       } else {
-        navbar.classList.remove("fixed-top");
+        navbar.classList.remove("fixed-top-transition");
       }
 
       // Ta bort "fixed-top" klassen när användaren är högst upp på sidan
