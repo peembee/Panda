@@ -152,7 +152,7 @@ select option {
 /* Media Queries CSS */
 @media only screen and (max-width: 768px) {
   .addEmployee {
-    height: 130vh;
+    height: auto;
   }
   .main-container {
     flex-direction: column-reverse;
