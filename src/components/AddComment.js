@@ -100,6 +100,7 @@ export function AddComment() {
                 onChange={handleChange}
                 required
                 className="select-arrow"
+                placeholder="Skriv kommentaren innan du skickar in"
               />
             </Form.Group>
           </Form>
